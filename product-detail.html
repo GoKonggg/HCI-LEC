@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Detail | RRQ-ish Store</title>
+  <link rel="stylesheet" href="styles-product.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ======== PRODUCT DETAIL SECTION ======== -->
+  <section class="product-detail">
+    <div class="product-gallery">
+      <img src="./ASSET/prod-1.jpg" id="mainImg" class="main-img" alt="RRQ Rosseau Tee" />
+      <div class="thumbs">
+        <img src="./ASSET/prod-1.jpg" class="thumb active" alt="Thumb 1"/>
+        <img src="./ASSET/prod-1.jpg" class="thumb" alt="Thumb 2"/>
+        <img src="./ASSET/prod-1.jpg" class="thumb" alt="Thumb 3"/>
+      </div>
+    </div>
+    <div class="product-info">
+      <h1 class="prod-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</h1>
+      <div class="prod-price">IDR159,000.00</div>
+      <div class="prod-rating">
+        <span class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </span>
+        <span class="review-count">(27 Reviews)</span>
+      </div>
+      <div class="prod-desc">
+        Bahan katun premium, nyaman dipakai harian, sablon awet. Tersedia size S sampai XXL.
+      </div>
+      <div class="prod-size">
+        <span>Choose Size:</span>
+        <select id="sizeSelect">
+          <option value="">Select Size</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+        </select>
+        <button class="size-guide-btn" id="openSizeGuide">Size Chart <i class="fa-solid fa-ruler"></i></button>
+      </div>
+      <div class="prod-actions">
+        <button class="add-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+        <button class="add-wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+<!-- ===== SIZE GUIDE MODAL (JERSEY) ===== -->
+<div class="modal-bg" id="sizeGuideModal">
+  <div class="modal-content">
+    <button class="close-modal" id="closeSizeGuide">&times;</button>
+    <h3 class="size-guide-title">SIZE CHART</h3>
+    <img 
+      src="./ASSET/jersey_size_chart.png" 
+      alt="Size Chart Jersey RRQ"
+      class="size-guide-img"
+      style="max-width: 400px; width: 100%; margin: 0 auto; display: block;"
+    />
+    <p class="size-guide-desc" style="text-align:center; color:#444; margin-top:12px;">
+      All measurements are in centimeters (cm).<br>
+      For the best fit, compare with your favorite jersey.
+    </p>
+  </div>
+</div>
+
+
+
+  <!-- ===== PRODUCT REVIEWS ===== -->
+  <section class="reviews-section">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-list" id="reviewsList">
+      <!-- Review sample -->
+      <div class="review">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <div class="review-content">
+          <span class="review-user">by: Aldo</span>
+          <span class="review-text">Bahannya enak, original RRQ, pengiriman cepat!</span>
+        </div>
+      </div>
+      <div class="review">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+        <div class="review-content">
+          <span class="review-user">by: Dinda</span>
+          <span class="review-text">Size pas, warna sama kayak foto!</span>
+        </div>
+      </div>
+    </div>
+    <form class="review-form" id="reviewForm">
+      <label for="reviewText">Add Your Review:</label>
+      <textarea id="reviewText" rows="2" required placeholder="Your review..."></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script src="product-detail.js"></script>
+</body>
+</html>

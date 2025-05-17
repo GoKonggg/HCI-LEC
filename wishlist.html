@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Wishlist | RRQ-ish Store</title>
+  <link rel="stylesheet" href="styles.css" />    <!-- (CSS utama lo) -->
+  <link rel="stylesheet" href="wishlist.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <!-- NAVBAR kamu di sini (opsional include) -->
+     <!-- ===== HEADER (dengan dropdown Account) ===== -->
+<header class="header">
+  <div class="logo">
+    <img src="./ASSET/logo.png" alt="RRQ Store" />
+  </div>
+
+  <form class="searchbar">
+    <input type="text" placeholder="Search Products Here" />
+    <button type="submit">SEARCH</button>
+  </form>
+
+  <div class="header-icons">
+    <!-- dropdown account -->
+    <div class="account-wrap">
+      <button class="account-btn">
+        <i class="fa-regular fa-user"></i>
+        <span class="desktop-only"> Account</span>
+        <i class="fa-solid fa-caret-down caret"></i>
+      </button>
+
+      <div class="account-menu">
+        <a href="#" id="link-signin">Sign in</a>
+        <a href="#" id="link-register">Register</a>
+        <a href="#" id="link-wishlist">Wishlists (0)</a>
+      </div>
+    </div>
+
+    <!-- cart -->
+    <a href="#">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="desktop-only">Cart&nbsp;: 0&nbsp;Item</span>
+    </a>
+  </div>
+</header>
+
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links">
+    <ul>
+      <li><a href="#">Special Price</a></li>
+      <li><a href="#">Jersey Slime 2025</a></li>
+      <li><a href="#">RRQ3S</a></li>
+      <li><a href="#">Apparel</a></li>
+      <li><a href="#">Accessories</a></li>
+      <li><a href="#">RRQ Labs</a></li>
+    </ul>
+  </nav>
+
+  <section class="wishlist-page">
+    <div class="breadcrumb">
+      <a href="dashboard.html"><i class="fa-solid fa-user"></i> Your Account</a>
+      <span>&rsaquo;</span>
+      <span>Your Wishlist</span>
+    </div>
+
+    <h2 class="wishlist-title">My Wishlists</h2>
+
+    <!-- NEW WISHLIST FORM -->
+    <form class="wishlist-new" id="wishlistNewForm">
+      <input type="text" placeholder="Enter wishlist name..." required>
+      <button type="submit"><i class="fa-solid fa-plus"></i> Create</button>
+    </form>
+
+    <!-- LIST TABLE -->
+    <div class="wishlist-table-wrap">
+      <table class="wishlist-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Qty</th>
+            <th>Created</th>
+            <th>Direct Link</th>
+            <th>Default</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>My Wishlist</td>
+            <td><span class="qty-badge">12</span></td>
+            <td>2025-03-04</td>
+            <td><a href="#" class="view-link">View</a></td>
+            <td><input type="checkbox" checked disabled></td>
+            <td><button class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
+          </tr>
+          <tr>
+            <td>Jersey Drops</td>
+            <td><span class="qty-badge">3</span></td>
+            <td>2025-05-14</td>
+            <td><a href="#" class="view-link">View</a></td>
+            <td><input type="checkbox" disabled></td>
+            <td><button class="delete-btn"><i class="fa-solid fa-trash"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="wishlist-back">
+      <a href="dashboard.html"><i class="fa-solid fa-arrow-left"></i> Back to Account</a>
+    </div>
+  </section>
+
+  <!-- FOOTER kamu di sini (opsional include) -->
+     <!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+
+  <!-- newsletter strip -->
+  <div class="footer-newsletter">
+    <div class="nw-left">
+      <i class="fa-solid fa-envelope-open-text"></i>
+      <div class="nw-text">
+        <h4>Newsletter</h4>
+        <p>Sign Up For Our Newsletter</p>
+      </div>
+    </div>
+
+    <form class="nw-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+    <small>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</small>
+  </div>
+
+  <!-- footer columns -->
+  <div class="footer-columns">
+
+    <!-- address / contact -->
+    <div class="f-col f-contact">
+      <h4>ADDRESS</h4>
+      <p>Jl. Lapangan Bola No. 1 B, Kebon Jeruk, Jakarta Barat (Sebelah Ruko BRI) KOTA JAKARTA BARAT – KEBON JERUK DKI JAKARTA ID 11510</p>
+
+      <h4>CALL NOW</h4>
+      <p>+6282213775259</p>
+
+      <h4>EMAIL ID</h4>
+      <p>cs.store@teamrrq.com</p>
+    </div>
+
+    <!-- account links -->
+    <div class="f-col">
+      <h4>Your Account</h4>
+      <ul>
+        <li><a href="#">Personal info</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Credit slips</a></li>
+        <li><a href="#">Addresses</a></li>
+        <li><a href="#">Vouchers</a></li>
+        <li><a href="#">My wishlists</a></li>
+      </ul>
+    </div>
+
+    <!-- info links -->
+    <div class="f-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">Terms and Condition</a></li>
+        <li><a href="#">New products</a></li>
+        <li><a href="#">Best sellers</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /footer-columns -->
+
+  <!-- payment row & socials -->
+  <div class="footer-bottom">
+    <div class="socials">
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <!-- tambahkan ikon lain jika mau -->
+    </div>
+
+    <img src="./ASSET/midtrans-logos.png" alt="Payments"> <!-- ganti ke sprite/logo mu -->
+  </div>
+
+  <div class="copyright">
+    © 2024 – RRQ Shop. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>

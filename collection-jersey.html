@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RRQ Shop - Jersey</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="collection-jersey.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- ===== HEADER (copy dari page utama, jangan ubah di sini) ===== -->
+   
+  <!-- ===== HEADER (dengan dropdown Account) ===== -->
+<header class="header">
+  <div class="logo">
+  <a href="index.html">
+    <img src="./ASSET/logo.png" alt="RRQ Store" />
+  </a>
+</div>
+
+
+  <form class="searchbar">
+    <input type="text" placeholder="Search Products Here" />
+    <button type="submit">SEARCH</button>
+  </form>
+
+  <div class="header-icons">
+    <!-- dropdown account -->
+    <div class="account-wrap">
+      <button class="account-btn">
+        <i class="fa-regular fa-user"></i>
+        <span class="desktop-only"> Account</span>
+        <i class="fa-solid fa-caret-down caret"></i>
+      </button>
+
+      <div class="account-menu">
+        <a href="#" id="link-signin">Sign in</a>
+        <a href="#" id="link-register">Register</a>
+        <a href="#" id="link-wishlist">Wishlists (0)</a>
+      </div>
+    </div>
+
+    <!-- cart -->
+    <a href="#">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="desktop-only">Cart&nbsp;: 0&nbsp;Item</span>
+    </a>
+  </div>
+</header>
+
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links">
+    <ul>
+      <li><a href="#">Special Price</a></li>
+      <li><a href="#">Jersey Slime 2025</a></li>
+      <li><a href="#">RRQ3S</a></li>
+      <li><a href="#">Apparel</a></li>
+      <li><a href="#">Accessories</a></li>
+      <li><a href="#">RRQ Labs</a></li>
+    </ul>
+  </nav>
+
+  <main class="shop-main">
+    <nav class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span class="divider">/</span>
+  <a href="collection.html">Collection</a>
+  <span class="divider">/</span>
+  <span class="current">Jersey</span>
+</nav>
+
+
+    <!-- Top Sales Bar -->
+   <section class="top-sales-bar">
+  <div class="top-sales-label">Top Seller</div>
+  <div class="top-sales-carousel">
+    <button class="carousel-arrow left" id="topSalesPrev"><i class="fa fa-chevron-left"></i></button>
+    <div class="top-sales-list" id="topSalesList"></div>
+    <button class="carousel-arrow right" id="topSalesNext"><i class="fa fa-chevron-right"></i></button>
+  </div>
+</section>
+
+
+
+
+    <!-- Filter & Sort Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn" id="filterBtn">
+        <i class="fa-solid fa-sliders"></i> Filter & Sort
+      </button>
+      <div class="prod-count" id="prodCount"></div>
+    </div>
+
+    <!-- Produk Grid -->
+    <section class="product-grid" id="productGrid">
+      <!-- Produk grid muncul dari JS -->
+    </section>
+  </main>
+
+  <!-- Filter Modal/Sheet (for mobile) -->
+  <div class="filter-modal" id="filterModal" style="display:none;">
+    <div class="filter-modal-content">
+      <span class="filter-close" id="filterClose">&times;</span>
+      <h3>Filter Products</h3>
+      <div class="filter-group">
+        <label>Kategori:</label>
+        <select id="categoryFilter">
+          <option value="">All</option>
+          <option value="Jersey">Jersey</option>
+          <option value="Hoodie">Hoodie</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label>Sort By:</label>
+        <select id="sortFilter">
+          <option value="default">Default</option>
+          <option value="priceLow">Price: Low to High</option>
+          <option value="priceHigh">Price: High to Low</option>
+        </select>
+      </div>
+      <button class="filter-btn" id="applyFilterBtn">Apply</button>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER (copy dari page utama, jangan ubah di sini) ===== -->
+   
+  <!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+
+  <!-- newsletter strip -->
+  <div class="footer-newsletter">
+    <div class="nw-left">
+      <i class="fa-solid fa-envelope-open-text"></i>
+      <div class="nw-text">
+        <h4>Newsletter</h4>
+        <p>Sign Up For Our Newsletter</p>
+      </div>
+    </div>
+
+    <form class="nw-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+    <small>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</small>
+  </div>
+
+  <!-- footer columns -->
+  <div class="footer-columns">
+
+    <!-- address / contact -->
+    <div class="f-col f-contact">
+      <h4>ADDRESS</h4>
+      <p>Jl. Lapangan Bola No. 1 B, Kebon Jeruk, Jakarta Barat (Sebelah Ruko BRI) KOTA JAKARTA BARAT – KEBON JERUK DKI JAKARTA ID 11510</p>
+
+      <h4>CALL NOW</h4>
+      <p>+6282213775259</p>
+
+      <h4>EMAIL ID</h4>
+      <p>cs.store@teamrrq.com</p>
+    </div>
+
+    <!-- account links -->
+    <div class="f-col">
+      <h4>Your Account</h4>
+      <ul>
+        <li><a href="#">Personal info</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Credit slips</a></li>
+        <li><a href="#">Addresses</a></li>
+        <li><a href="#">Vouchers</a></li>
+        <li><a href="#">My wishlists</a></li>
+      </ul>
+    </div>
+
+    <!-- info links -->
+    <div class="f-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">Terms and Condition</a></li>
+        <li><a href="#">New products</a></li>
+        <li><a href="#">Best sellers</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /footer-columns -->
+
+  <!-- payment row & socials -->
+  <div class="footer-bottom">
+    <div class="socials">
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <!-- tambahkan ikon lain jika mau -->
+    </div>
+
+    <img src="./ASSET/midtrans-logos.png" alt="Payments"> <!-- ganti ke sprite/logo mu -->
+  </div>
+
+  <div class="copyright">
+    © 2024 – RRQ Shop. All rights reserved.
+  </div>
+</footer>
+
+<script src="script.js"></script>
+  <script src="collection-jersey.js"></script>
+</body>
+</html>

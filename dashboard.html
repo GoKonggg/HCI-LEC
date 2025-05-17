@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Account | RRQ-ish Store</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- style utama -->
+  <link rel="stylesheet" href="dashboard.css" /> <!-- khusus dashboard -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Orbitron RRQ -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement">
+    <p><i class="fa-solid fa-truck"></i> HOW TO TRACK YOUR ORDERS FROM RRQ STORE! (ANNOUNCEMENT)</p>
+    <div class="lang-select">
+      <span>ENGLISH</span><i class="fa-solid fa-caret-down"></i>
+    </div>
+  </div>
+
+  <!-- ===== HEADER (dengan dropdown Account) ===== -->
+<header class="header">
+  <div class="logo">
+  <a href="index.html">
+    <img src="./ASSET/logo.png" alt="RRQ Store" />
+  </a>
+</div>
+
+
+  <form class="searchbar" autocomplete="off">
+  <input type="text" id="searchInput" placeholder="Search Products Here" />
+  <button type="submit">SEARCH</button>
+  <div class="recent-search" id="recentSearchBox" style="display:none">
+    <div class="recent-search-title">Recent Search</div>
+    <ul class="recent-search-list" id="recentSearchList"></ul>
+    <button class="recent-search-clear" id="recentSearchClear" type="button">Clear History</button>
+  </div>
+</form>
+
+
+
+  <div class="header-icons">
+    <!-- dropdown account -->
+    <div class="account-wrap">
+      <button class="account-btn">
+        <i class="fa-regular fa-user"></i>
+        <span class="desktop-only"> Account</span>
+        <i class="fa-solid fa-caret-down caret"></i>
+      </button>
+
+      <div class="account-menu">
+        <a href="#" id="link-signin">Sign in</a>
+        <a href="#" id="link-register">Register</a>
+        <a href="#" id="link-wishlist">Wishlists (0)</a>
+      </div>
+    </div>
+
+    <!-- cart -->
+    <a href="#">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="desktop-only">Cart&nbsp;: 0&nbsp;Item</span>
+    </a>
+  </div>
+</header>
+
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links">
+    <ul>
+       <li class="mega-menu-btn"><a href="#">Shop</a></li>
+      <li><a href="#">Special Price</a></li>
+      <li><a href="#">Jersey Slime 2025</a></li>
+      <li><a href="#">RRQ3S</a></li>
+      <li><a href="#">Apparel</a></li>
+      <li><a href="#">Accessories</a></li>
+      <li><a href="#">RRQ Labs</a></li>
+    </ul>
+  </nav>
+<!-- ===== MEGA MENU SIDEBAR (RRQ STYLE) ===== -->
+<div class="mega-menu-wrap" id="megaMenu">
+  <div class="mega-menu">
+    <!-- Sidebar kiri -->
+    <ul class="mega-sidebar">
+      <li data-panel="jersey"><i class="fa-solid fa-shirt"></i> Jersey</li>
+      <li data-panel="hoodie"><i class="fa-solid fa-vest"></i> Hoodie</li>
+      <li data-panel="pants"><i class="fa-solid fa-person-walking"></i> Pants</li>
+      <li data-panel="footwear"><i class="fa-solid fa-shoe-prints"></i> Footwear</li>
+      <li data-panel="accessories"><i class="fa-solid fa-gem"></i> Accessories</li>
+      <li data-panel="collections"><i class="fa-solid fa-layer-group"></i> Collections</li>
+      <li data-panel="shopall"><i class="fa-solid fa-store"></i> Shop All</li>
+    </ul>
+    <!-- Konten kanan -->
+    <div class="mega-panels">
+      <div class="mega-panel" data-panel="jersey">
+        <h3>Jersey RRQ</h3>
+        <a href="#">RRQ Jersey X Slime Black 2025</a>
+        <a href="#">RRQ Jersey X Slime White 2025</a>
+      </div>
+      <div class="mega-panel" data-panel="hoodie">
+        <h3>Hoodie RRQ</h3>
+        <a href="#">RRQ Premium Hoodie</a>
+        <a href="#">RRQ Windbreaker</a>
+      </div>
+      <div class="mega-panel" data-panel="pants">
+        <h3>Pants RRQ</h3>
+        <a href="#">RRQ Jogger Pants</a>
+        <a href="#">RRQ Sweatpants</a>
+      </div>
+      <div class="mega-panel" data-panel="footwear">
+        <h3>Footwear RRQ</h3>
+        <a href="#">RRQ Sneakers</a>
+        <a href="#">RRQ Slides</a>
+      </div>
+      <div class="mega-panel" data-panel="accessories">
+        <h3>Accessories RRQ</h3>
+        <a href="#">RRQ Cap</a>
+        <a href="#">RRQ Socks</a>
+        <a href="#">RRQ Keychain</a>
+      </div>
+      <div class="mega-panel" data-panel="collections">
+        <h3>Collections</h3>
+        <a href="#">RRQ Classic</a>
+        <a href="#">RRQ Limited Edition</a>
+      </div>
+      <div class="mega-panel" data-panel="shopall">
+        <h3>All Products</h3>
+        <a href="#">Shop All RRQ Merch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ===== ACCOUNT DASHBOARD ===== -->
+  <section class="account-dashboard">
+    <h2>Hi, Jansen!</h2>
+    <div class="account-grid">
+      <a href="profile.html" class="acc-card">
+        <i class="fa-regular fa-user"></i>
+        <span>Information</span>
+      </a>
+      <a href="profile-address.html" class="acc-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Addresses</span>
+      </a>
+      <a href="profile-orders.html" class="acc-card">
+        <i class="fa-solid fa-calendar-check"></i>
+        <span>Orders</span>
+      </a>
+      <a href="profile-credit.html" class="acc-card">
+        <i class="fa-solid fa-receipt"></i>
+        <span>Credit Slips</span>
+      </a>
+      <a href="profile-vouchers.html" class="acc-card">
+        <i class="fa-solid fa-tag"></i>
+        <span>Vouchers</span>
+      </a>
+      <a href="wishlist.html" class="acc-card">
+        <i class="fa-solid fa-heart"></i>
+        <span>My Wishlist</span>
+      </a>
+    </div>
+    <button class="btn-signout" onclick="signOut()">Sign Out</button>
+
+    <!-- ===== Recently Viewed Section ===== -->
+    <div class="recently-viewed-section">
+      <h3>Recently Viewed</h3>
+      <div id="recentProducts" class="recent-products"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-newsletter">
+      <div class="nw-left">
+        <i class="fa-solid fa-envelope-open-text"></i>
+        <div class="nw-text">
+          <h4>Newsletter</h4>
+          <p>Sign Up For Our Newsletter</p>
+        </div>
+      </div>
+      <form class="nw-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">SUBSCRIBE</button>
+      </form>
+      <small>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</small>
+    </div>
+    <div class="footer-columns">
+      <div class="f-col f-contact">
+        <h4>ADDRESS</h4>
+        <p>Jl. Lapangan Bola No. 1 B, Kebon Jeruk, Jakarta Barat...</p>
+        <h4>CALL NOW</h4>
+        <p>+6282213775259</p>
+        <h4>EMAIL ID</h4>
+        <p>cs.store@teamrrq.com</p>
+      </div>
+      <div class="f-col">
+        <h4>Your Account</h4>
+        <ul>
+          <li><a href="#">Personal info</a></li>
+          <li><a href="#">Orders</a></li>
+          <li><a href="#">Credit slips</a></li>
+          <li><a href="#">Addresses</a></li>
+          <li><a href="#">Vouchers</a></li>
+          <li><a href="#">My wishlists</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="#">Terms and Condition</a></li>
+          <li><a href="#">New products</a></li>
+          <li><a href="#">Best sellers</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <img src="./ASSET/midtrans-logos.png" alt="Payments">
+    </div>
+    <div class="copyright">
+      © 2024 – RRQ Shop. All rights reserved.
+    </div>
+  </footer>
+   <script src="script.js" defer></script>
+
+  <script src="dashboard.js" defer></script>
+</body>
+</html>

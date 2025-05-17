@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alamat Saya | RRQ-ish Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="profile-address.css"/> <!-- CSS custom kamu -->
+</head>
+<body>
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span> - </span>
+    <a href="dashboard.html">Your account</a>
+    <span> - </span>
+    <span>Addressess</span>
+  </nav>
+
+  <section class="address-section">
+    <h1>
+      <i class="fa-solid fa-location-dot"></i>
+      Alamat Baru
+    </h1>
+    <form id="addressForm" class="address-form">
+      <div class="input-row">
+        <div class="input-col">
+          <label for="alias">Alias</label>
+          <input type="text" id="alias" placeholder="Contoh: Rumah / Kantor"/>
+          <span class="opt-label">Opsional</span>
+        </div>
+        <div class="input-col">
+          <label for="addressComplement">Komplemen Alamat</label>
+          <input type="text" id="addressComplement" placeholder="Gedung, Unit, dll"/>
+          <span class="opt-label">Opsional</span>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-col">
+          <label for="firstName">Nama Depan</label>
+          <input type="text" id="firstName" required/>
+        </div>
+        <div class="input-col">
+          <label for="lastName">Nama Belakang</label>
+          <input type="text" id="lastName" required/>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-col long">
+          <label for="address">Alamat Lengkap</label>
+          <input type="text" id="address" placeholder="Jalan, RT/RW, No Rumah" required/>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-col">
+          <label for="zip">Kode Pos</label>
+          <input type="text" id="zip" placeholder="ex: 11510"/>
+        </div>
+        <div class="input-col">
+          <label for="phone">No HP</label>
+          <input type="text" id="phone" placeholder="ex: 08123456789"/>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-col">
+          <label for="province">Provinsi</label>
+          <select id="province" required>
+            <option value="">-- Pilih Provinsi --</option>
+            <option>DKI Jakarta</option>
+            <option>Jawa Barat</option>
+            <option>Jawa Timur</option>
+            <option>Bali</option>
+            <!-- Tambah lagi sesuai kebutuhan -->
+          </select>
+        </div>
+        <div class="input-col">
+          <label for="city">Kota/Kabupaten</label>
+          <select id="city" required>
+            <option value="">-- Pilih Kota/Kabupaten --</option>
+            <option>Jakarta Barat</option>
+            <option>Bandung</option>
+            <!-- Tambah lagi sesuai kebutuhan -->
+          </select>
+        </div>
+      </div>
+
+      <div class="input-row">
+        <div class="input-col">
+          <label for="district">Kecamatan</label>
+          <input type="text" id="district" placeholder="ex: Kebon Jeruk"/>
+        </div>
+        <div class="input-col">
+          <label for="village">Kelurahan/Desa</label>
+          <input type="text" id="village" placeholder="Opsional"/>
+          <span class="opt-label">Opsional</span>
+        </div>
+      </div>
+
+      <div class="form-action">
+        <button type="submit" class="save-btn"><i class="fa-solid fa-save"></i> Simpan</button>
+      </div>
+    </form>
+    <div class="address-back">
+      <a href="dashboard.html"><i class="fa-solid fa-arrow-left"></i> Kembali ke Akun</a>
+    </div>
+  </section>
+</body>
+</html>

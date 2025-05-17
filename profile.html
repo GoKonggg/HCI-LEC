@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Account</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="profile_style.css" />
+</head>
+<body>
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span> - </span>
+    <span>Your account</span>
+  </nav>
+
+  <!-- Personal information form -->
+   <div class="profile-avatar">
+  <label for="photoUpload">
+    <img id="preview" src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile Picture"/>
+    <div class="avatar-overlay">
+      <i class="fa-solid fa-camera"></i> Change Photo
+    </div>
+  </label>
+  <input type="file" id="photoUpload" accept="image/*" style="display:none"/>
+</div>
+
+  <section class="profile-section">
+    <h1>Your personal information</h1>
+    <form id="profileForm" class="profile-form">
+      <div class="form-row">
+        <label>Social title</label>
+        <div class="input-group radio-group">
+          <label><input type="radio" name="title" value="Mr." checked> Mr.</label>
+          <label><input type="radio" name="title" value="Mrs."> Mrs.</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" required />
+      </div>
+
+      <div class="form-row">
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" required />
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div class="form-row password-row">
+        <label for="password">Password</label>
+        <div class="input-with-btn">
+          <input type="password" id="password" required />
+          <button type="button" class="show-btn">SHOW</button>
+        </div>
+      </div>
+
+      <div class="form-row password-row optional">
+        <label for="newPassword">New password</label>
+        <div class="input-with-btn">
+          <input type="password" id="newPassword" />
+          <button type="button" class="show-btn">SHOW</button>
+        </div>
+        <span class="opt-label">Optional</span>
+      </div>
+
+      <div class="form-row optional">
+        <label for="birthDate">Birthdate</label>
+        <input type="date" id="birthDate" />
+        <span class="opt-label">Optional</span>
+      </div>
+
+      <div class="form-row checkbox-row">
+        <label></label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="offers" checked> Receive offers from our partners</label>
+          <label><input type="checkbox" id="newsletter"> Sign up for our newsletter</label>
+          <p class="notice">You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</p>
+        </div>
+      </div>
+
+      <div class="form-row submit-row">
+        <button type="submit" class="save-btn">Save</button>
+      </div>
+    </form>
+  </section>
+
+  <script src="profile_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+body {
+  background: #fafbfc;
+  color: #222;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  margin: 32px 0 18px 7.5vw;
+  font-weight: 500;
+  color: #888;
+}
+.breadcrumb a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 2px solid #ff7d00;
+  padding-bottom: 1.5px;
+  transition: color .16s;
+}
+.breadcrumb a:hover {
+  color: #ff7d00;
+}
+.breadcrumb .divider {
+  color: #bbb;
+  font-size: 1.2em;
+  margin: 0 1.5px;
+}
+.breadcrumb .current {
+  color: #aaa;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: default;
+}
+.collections-title {
+  max-width: 1100px;
+  margin: 0 auto 22px auto;
+  padding: 0 7vw;
+}
+.collections-title h1 {
+  font-size: 2.3rem;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  font-family: 'Segoe UI Semibold', Arial, sans-serif;
+}
+.collections-title p {
+  color: #666;
+  font-size: 1.07rem;
+  margin: 0 0 12px 0;
+}
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  max-width: 1120px;
+  margin: 0 auto 60px auto;
+  padding: 0 7vw;
+}
+.collection-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 3px 16px rgba(36,36,50,0.09);
+  overflow: hidden;
+  transition: transform .17s, box-shadow .18s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: 1.3px solid #eee;
+  position: relative;
+  /* Tambahan agar hover lebih jelas */
+  z-index: 1;
+}
+.collection-card:hover {
+  transform: translateY(-6px) scale(1.035);
+  box-shadow: 0 10px 32px rgba(36,36,50,0.14);
+  border-color: #ff7d00;
+}
+.collection-img {
+  width: 100%;
+  aspect-ratio:  1/1;
+  object-fit: cover;
+  object-position: center center;
+  background: #f5f5f5;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: block;
+  transition: transform .19s;
+}
+
+.collection-card:hover .collection-img {
+  transform: scale(1.07);
+}
+
+.collection-info {
+  padding: 19px 20px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.collection-name {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: #222;
+  margin-bottom: 3px;
+}
+.collection-count {
+  font-size: 0.97rem;
+  color: #777;
+}
+@media (max-width: 900px) {
+  .collections-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 18px;}
+}
+@media (max-width: 640px) {
+  .collections-title { padding: 0 3vw; }
+  .collections-grid { padding: 0 3vw; gap: 13px;}
+  .breadcrumb { margin-left: 3vw; }
+  .collection-info { padding: 13px 12px 12px 13px;}
+}

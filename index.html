@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RRQ-ish Store</title>
+
+  <!-- CSS utama -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Font Awesome buat ikon -->
+   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+<div class="announcement">
+  <p>
+    <i class="fa-solid fa-truck"></i>
+    <a href="how-to-track-order.html" class="announcement-link">
+      HOW TO TRACK YOUR ORDERS FROM RRQ STORE! (ANNOUNCEMENT)
+    </a>
+  </p>
+  <div class="lang-select">
+    <span>ENGLISH</span><i class="fa-solid fa-caret-down"></i>
+  </div>
+</div>
+
+
+  <!-- ===== HEADER (dengan dropdown Account) ===== -->
+<header class="header">
+  <div class="logo">
+  <a href="index.html">
+    <img src="./ASSET/logo.png" alt="RRQ Store" />
+  </a>
+</div>
+
+
+  <form class="searchbar" autocomplete="off">
+  <input type="text" id="searchInput" placeholder="Search Products Here" />
+  <button type="submit">SEARCH</button>
+  <div class="recent-search" id="recentSearchBox" style="display:none">
+    <div class="recent-search-title">Recent Search</div>
+    <ul class="recent-search-list" id="recentSearchList"></ul>
+    <button class="recent-search-clear" id="recentSearchClear" type="button">Clear History</button>
+  </div>
+</form>
+
+
+
+  <div class="header-icons">
+    <!-- dropdown account -->
+    <div class="account-wrap">
+      <button class="account-btn">
+        <i class="fa-regular fa-user"></i>
+        <span class="desktop-only"> Account</span>
+        <i class="fa-solid fa-caret-down caret"></i>
+      </button>
+
+      <div class="account-menu">
+        <a href="#" id="link-signin">Sign in</a>
+        <a href="#" id="link-register">Register</a>
+        <a href="#" id="link-wishlist">Wishlists (0)</a>
+      </div>
+    </div>
+
+    <!-- cart -->
+    <a href="#">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="desktop-only">Cart&nbsp;: 0&nbsp;Item</span>
+    </a>
+  </div>
+</header>
+
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links">
+    <ul>
+       <li class="mega-menu-btn"><a href="#">Shop</a></li>
+      <li><a href="under-development.html">Special Price</a></li>
+      <li><a href="under-development.html">Jersey Slime 2025</a></li>
+      <li><a href="under-development.html">RRQ3S</a></li>
+      <li><a href="under-development.html">Apparel</a></li>
+      <li><a href="under-development.html">Accessories</a></li>
+      <li><a href="under-development.html">RRQ Labs</a></li>
+    </ul>
+  </nav>
+<!-- ===== MEGA MENU SIDEBAR (RRQ STYLE) ===== -->
+<div class="mega-menu-wrap" id="megaMenu">
+  <div class="mega-menu">
+    <!-- Sidebar kiri -->
+    <ul class="mega-sidebar">
+      <li data-panel="jersey"><i class="fa-solid fa-shirt"></i> Jersey</li>
+      <li data-panel="hoodie"><i class="fa-solid fa-vest"></i> Hoodie</li>
+      <li data-panel="pants"><i class="fa-solid fa-person-walking"></i> Pants</li>
+      <li data-panel="footwear"><i class="fa-solid fa-shoe-prints"></i> Footwear</li>
+      <li data-panel="accessories"><i class="fa-solid fa-gem"></i> Accessories</li>
+      <li data-panel="collections"><i class="fa-solid fa-layer-group"></i> Collections</li>
+      <li data-panel="shopall"><i class="fa-solid fa-store"></i> Shop All</li>
+    </ul>
+    <!-- Konten kanan -->
+    <div class="mega-panels">
+      <div class="mega-panel" data-panel="jersey">
+        <h3>Jersey RRQ</h3>
+        <a href="under-development.html">RRQ Jersey X Slime Black 2025</a>
+        <a href="under-development.html">RRQ Jersey X Slime White 2025</a>
+      </div>
+      <div class="mega-panel" data-panel="hoodie">
+        <h3>Hoodie RRQ</h3>
+        <a href="under-development.html">RRQ Premium Hoodie</a>
+        <a href="under-development.html">RRQ Windbreaker</a>
+      </div>
+      <div class="mega-panel" data-panel="pants">
+        <h3>Pants RRQ</h3>
+        <a href="under-development.html">RRQ Jogger Pants</a>
+        <a href="under-development.html">RRQ Sweatpants</a>
+      </div>
+      <div class="mega-panel" data-panel="footwear">
+        <h3>Footwear RRQ</h3>
+        <a href="under-development.html">RRQ Sneakers</a>
+        <a href="under-development.html">RRQ Slides</a>
+      </div>
+      <div class="mega-panel" data-panel="accessories">
+        <h3>Accessories RRQ</h3>
+        <a href="under-development.html">RRQ Cap</a>
+        <a href="under-development.html">RRQ Socks</a>
+        <a href="under-development.html">RRQ Keychain</a>
+      </div>
+      <div class="mega-panel" data-panel="collections">
+        <h3>Collections</h3>
+        <a href="under-development.html">RRQ Classic</a>
+        <a href="under-development.html">RRQ Limited Edition</a>
+      </div>
+      <div class="mega-panel" data-panel="shopall">
+        <h3>All Products</h3>
+        <a href="under-development.html">Shop All RRQ Merch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  <!-- ===== HERO CAROUSEL ===== -->
+  <section class="carousel">
+    <div class="slides">
+      <img src="./ASSET/hero1.png" class="slide active"  alt="Slide 1">
+      <img src="./ASSET/hero2.png" class="slide"        alt="Slide 2">
+      <img src="./ASSET/hero3.png" class="slide"        alt="Slide 3">
+    </div>
+
+    <div class="dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot"        data-index="1"></span>
+      <span class="dot"        data-index="2"></span>
+    </div>
+  </section>
+<section class="collection-highlight-carousel">
+  <div class="chc-container">
+    <!-- Arrow left -->
+    <button class="chc-arrow chc-prev"><i class="fa-solid fa-chevron-left"></i></button>
+
+    <!-- Slide 1 -->
+    <div class="chc-slide active">
+      <div class="chc-img-box">
+        <img src="./ASSET/collection1.jpg" alt="RRQ X Slime 2025" />
+      </div>
+      <div class="chc-caption">
+        <span class="chc-badge"><i class="fa-solid fa-fire"></i> Collection Highlight</span>
+        <div class="chc-title">
+          RRQ X Slime 2025
+          <span class="chc-badge-small">Limited</span>
+        </div>
+        <div class="chc-desc">
+          Only <b>500 pcs</b> — Grab yours now!
+        </div>
+        <a href="#" class="chc-link">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="chc-slide">
+      <div class="chc-img-box">
+        <img src="./ASSET/collection1.jpg" alt="RRQ Black Edition" />
+      </div>
+      <div class="chc-caption">
+        <span class="chc-badge"><i class="fa-solid fa-certificate"></i> New Arrival</span>
+        <div class="chc-title">
+          RRQ Black Jersey 2025
+        </div>
+        <div class="chc-desc">
+          Drop terbaru bulan ini. Cocok untuk kamu yang #StayRoyal.
+        </div>
+        <a href="#" class="chc-link">SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- Arrow right -->
+    <button class="chc-arrow chc-next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+  <div class="chc-dots">
+    <span class="chc-dot active"></span>
+    <span class="chc-dot"></span>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="product-carousel">
+  <div class="pc-header">
+    <div class="pc-tabs">
+      <button class="pc-tab active" data-tab="bestseller">Bestseller</button>
+      <button class="pc-tab" data-tab="featured">Featured</button>
+    </div>
+    <div class="pc-arrows">
+      <button class="pc-prev"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="pc-next"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <div class="pc-track-wrapper">
+    <!-- === BESTSELLER === -->
+    <div class="pc-track active" data-tab-content="bestseller">
+      
+    <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+      <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+      <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+    <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+    <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+    <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+      
+    </div>
+    <!-- === FEATURED === -->
+    <div class="pc-track" data-tab-content="featured">
+
+      <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+      <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+      <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+       <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+<a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+       <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+<a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+
+       <a class="pc-card" href="product-detail.html?id=rrq-rosseau-tee" data-id="rrq-rosseau-tee">
+      <div class="pc-img-wrapper">
+        <img src="./ASSET/prod-1.jpg" alt="RRQ Tee">
+      </div>
+      <p class="pc-price">IDR159,000.00</p>
+      <p class="pc-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</p>
+    </a>
+      
+    </div>
+  </div>
+
+  <!-- for View All Collections -->
+  <a href="collection.html?tab=bestseller" class="see-all-bottom" id="seeAllBestseller">
+    View All Collections<i class="fa-solid fa-chevron-right"></i>
+  </a>
+  <a href="collection.html?tab=featured" class="see-all-bottom" id="seeAllFeatured" style="display:none;">
+    View All Collections <i class="fa-solid fa-chevron-right"></i>
+  </a>
+</section>
+
+
+
+  <!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+
+  <!-- newsletter strip -->
+  <div class="footer-newsletter">
+    <div class="nw-left">
+      <i class="fa-solid fa-envelope-open-text"></i>
+      <div class="nw-text">
+        <h4>Newsletter</h4>
+        <p>Sign Up For Our Newsletter</p>
+      </div>
+    </div>
+
+    <form class="nw-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+    <small>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</small>
+  </div>
+
+  <!-- footer columns -->
+  <div class="footer-columns">
+
+    <!-- address / contact -->
+    <div class="f-col f-contact">
+      <h4>ADDRESS</h4>
+      <p>Jl. Lapangan Bola No. 1 B, Kebon Jeruk, Jakarta Barat (Sebelah Ruko BRI) KOTA JAKARTA BARAT – KEBON JERUK DKI JAKARTA ID 11510</p>
+
+      <h4>CALL NOW</h4>
+      <p>+6282213775259</p>
+
+      <h4>EMAIL ID</h4>
+      <p>cs.store@teamrrq.com</p>
+    </div>
+
+    <!-- account links -->
+    <div class="f-col">
+      <h4>Your Account</h4>
+      <ul>
+        <li><a href="#">Personal info</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Credit slips</a></li>
+        <li><a href="#">Addresses</a></li>
+        <li><a href="#">Vouchers</a></li>
+        <li><a href="#">My wishlists</a></li>
+      </ul>
+    </div>
+
+    <!-- info links -->
+    <div class="f-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">Terms and Condition</a></li>
+        <li><a href="#">New products</a></li>
+        <li><a href="#">Best sellers</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /footer-columns -->
+
+  <!-- payment row & socials -->
+  <div class="footer-bottom">
+    <div class="socials">
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <!-- tambahkan ikon lain jika mau -->
+    </div>
+
+    <img src="./ASSET/midtrans-logos.png" alt="Payments"> <!-- ganti ke sprite/logo mu -->
+  </div>
+
+  <div class="copyright">
+    © 2024 – RRQ Shop. All rights reserved.
+  </div>
+</footer>
+
+  <!-- halaman sudah selesai di atas -->
+
+<!-- === LOGIN / REGISTER MODAL === -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box">
+    <button class="auth-close">&times;</button>
+
+    <!-- tab switch -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-target="signin">Sign In</button>
+      <button class="auth-tab"        data-target="register">Register</button>
+    </div>
+
+    <!-- Sign-in form -->
+    <form class="auth-form active" id="formSignin">
+      <input type="email"    placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+
+    <!-- Register form -->
+    <form class="auth-form" id="formRegister">
+      <input type="text"     placeholder="First name" required>
+      <input type="text"     placeholder="Last name"  required>
+      <input type="email"    placeholder="Email"      required>
+      <input type="password" placeholder="Password"   required>
+      <button type="submit">CREATE ACCOUNT</button>
+    </form>
+  </div>
+</div>
+
+ 
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>

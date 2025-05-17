@@ -1,0 +1,135 @@
+body {
+  background: #f9fafb;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.breadcrumb {
+  font-size: 0.97rem;
+  margin: 24px auto 0 auto;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 1000px;
+  padding: 0 18px;
+}
+
+.breadcrumb a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+}
+.breadcrumb i { color: #ff7d00; margin-right: 4px; }
+
+.address-section {
+  background: #fff;
+  max-width: 600px;
+  margin: 38px auto 48px auto;
+  padding: 38px 36px 32px 36px;
+  border-radius: 14px;
+  box-shadow: 0 3px 24px rgba(0,0,0,.06);
+}
+.address-section h1 {
+  font-size: 1.55rem;
+  margin-bottom: 26px;
+  color: #222;
+  letter-spacing: 1.1px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 800;
+}
+.address-section h1 i {
+  color: #ff7d00;
+  font-size: 1.3rem;
+  margin-right: 2px;
+}
+.address-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-row {
+  display: flex;
+  gap: 18px;
+}
+.input-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.input-col.long { flex: 2; }
+
+.address-form label {
+  font-weight: 600;
+  color: #222;
+  font-size: 1.04rem;
+  margin-bottom: 1px;
+}
+.address-form input,
+.address-form select {
+  border: 1.3px solid #e3e3e3;
+  padding: 9px 13px;
+  font-size: 1rem;
+  border-radius: 6px;
+  outline: none;
+  background: #fafbfc;
+  transition: border-color .17s;
+}
+.address-form input:focus,
+.address-form select:focus {
+  border-color: #ff7d00;
+  background: #fff;
+}
+.opt-label {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-left: 2px;
+}
+
+.form-action {
+  text-align: right;
+  margin-top: 14px;
+}
+.save-btn {
+  background: #ff7d00;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 11px 36px;
+  border-radius: 7px;
+  letter-spacing: 1.1px;
+  cursor: pointer;
+  transition: background .18s, box-shadow .14s;
+  box-shadow: 0 1px 10px rgba(255,125,0,0.03);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.save-btn i { font-size: 1.1rem; }
+.save-btn:hover { background: #222; color: #fff; }
+
+.address-back {
+  margin-top: 30px;
+}
+.address-back a {
+  color: #222;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: color .14s;
+}
+.address-back a:hover { color: #ff7d00; }
+
+@media (max-width: 700px) {
+  .address-section {
+    padding: 22px 10px;
+  }
+  .input-row { flex-direction: column; gap: 8px;}
+}

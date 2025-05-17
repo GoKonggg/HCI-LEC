@@ -1,0 +1,103 @@
+body {
+  background: #f8f9fa;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.track-container {
+  max-width: 500px;
+  background: #fff;
+  margin: 42px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 32px 0 rgba(80,80,80,0.13);
+  overflow: hidden;
+  border: 1px solid #ececec;
+}
+
+.track-header {
+  background: #eef1f5;
+  color: #212121;
+  font-size: 1.13rem;
+  padding: 17px 28px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  border-bottom: 1.5px solid #f3b46b;
+}
+
+.track-content {
+  padding: 32px 28px 28px 28px;
+}
+
+.track-content h2 {
+  color: #ff7d00;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+.track-content ol {
+  margin-left: 20px;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.track-content ol li {
+  margin-bottom: 13px;
+}
+
+.track-content a {
+  color: #ff7d00;
+  text-decoration: underline;
+}
+
+.track-btn {
+  display: inline-block;
+  margin-top: 14px;
+  color: #fff;
+  padding: 11px 28px;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.14s;
+}
+
+
+.track-btn i {
+  margin-right: 8px;
+}
+
+.track-note {
+  background: #fff7e3;
+  color: #ad6d13;
+  border-left: 5px solid #ffb93b;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 0.97rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.track-note i {
+  font-size: 1.13rem;
+  margin-top: 3px;
+  color: #ff7d00;
+}
+
+
+
+@media (max-width: 600px) {
+  .track-container {
+    margin: 16px 5px;
+    max-width: 99vw;
+  }
+  .track-header, .track-content { padding: 14px 7vw; }
+  .track-content h2 { font-size: 1.08rem; }
+  .track-btn { font-size: 0.95rem; padding: 10px 16px; }
+}

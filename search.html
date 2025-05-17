@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search Results | RRQ Store</title>
+  <link rel="stylesheet" href="search.css"/>
+  <link rel="stylesheet" href="styles.css"/> <!-- kalau mau styling global/navbar -->
+</head>
+<body>
+  <!-- NAVBAR BISA DI INCLUDE DI SINI JIKA ADA -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="./ASSET/logo.png" alt="RRQ Store"/>
+    </a>
+    <form class="searchbar search-page" autocomplete="off">
+      <input type="text" id="searchInput" placeholder="Search Products Here"/>
+      <button type="submit">SEARCH</button>
+    </form>
+  </header>
+  <main>
+    <h2 class="search-title">Search Results</h2>
+    <div id="searchInfo" class="search-info"></div>
+    <div id="searchResults" class="search-results"></div>
+  </main>
+  <script src="search.js"></script>
+</body>
+</html>
