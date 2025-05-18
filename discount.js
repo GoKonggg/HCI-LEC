@@ -7,7 +7,8 @@ const products = [
     price: 349000,
     discount: 30,
     category: "jersey",
-    discountEnd: "2025-06-01T23:59:59" 
+    discountEnd: "2025-06-01T23:59:59" ,
+    href : "discount-product-detail.html"
   },
   
     {
@@ -116,20 +117,10 @@ const products = [
 const discountedProducts = products.filter(p => p.discount > 0);
 
 const grid = document.getElementById('discountGrid');
-grid.innerHTML = discountedProducts.map(p => `
-  <div class="discount-card">
-    <div class="discount-badge">-${p.discount}%</div>
-    <img src="${p.image}" alt="${p.name}" class="discount-img">
-    <h3>${p.name}</h3>
-    <div>
-      <span class="discount-price">Rp ${p.price.toLocaleString()}</span>
-      <span class="discount-old">Rp ${p.oldPrice.toLocaleString()}</span>
-    </div>
-  </div>
-`).join('');
+
 
 grid.innerHTML = discountedProducts.map((p, idx) => `
-  <div class="discount-card">
+  <a href="${p.href || 'discount-product-detail.html'}" class="discount-card">
     <div class="discount-badge">-${p.discount}%</div>
     <img src="${p.image}" alt="${p.name}" class="discount-img">
     <h3>${p.name}</h3>
@@ -138,8 +129,9 @@ grid.innerHTML = discountedProducts.map((p, idx) => `
       <span class="discount-old">Rp ${p.oldPrice.toLocaleString()}</span>
     </div>
     <div class="discount-countdown" id="countdown-${idx}"></div>
-  </div>
+  </a>
 `).join('');
+
 
 // Setelah innerHTML produk, tambahkan untuk tiap card:
 discountedProducts.forEach((p, idx) => {

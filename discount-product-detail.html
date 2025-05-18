@@ -6,6 +6,7 @@
   <title>Product Discount Detail | RRQ-ish Store</title>
   <link rel="stylesheet" href="discount-product-detail.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="discount.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -122,7 +123,10 @@
       </div>
     </div>
   </div>
-
+<nav class="breadcrumb">
+    <a href="index.html"><i class="fa fa-home"></i> Home</a> 
+    / <a href="discount.html"><i></i> Dicount</a> 
+  </nav>
   <main>
     <section class="product-detail">
       <div class="product-gallery">
@@ -134,9 +138,10 @@
 
         <!-- DISCOUNT COUNTDOWN -->
         <div class="discount-countdown">
-          <span class="countdown-text">Ends in</span>
-          <span id="countdown-timer" class="countdown-timer"></span>
-        </div>
+  <span class="countdown-label">HURRY UP! SALE END IN</span>
+  <div id="countdown-timer" class="countdown-timer"></div>
+</div>
+
 
         <div class="prod-price">
           <span class="current-price">IDR 129,000</span>

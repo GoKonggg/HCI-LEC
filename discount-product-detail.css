@@ -60,46 +60,64 @@ body {
 }
 
 .discount-countdown {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #fffbe7;
-  padding: 10px 18px;
-  border-radius: 16px;
-  font-size: 1.1rem;
-  margin-bottom: 6px;
-  font-weight: 600;
-  border: 1.5px solid #ffe484;
-  width: fit-content;
-  box-shadow: 0 2px 8px rgba(255, 223, 83, 0.08);
-}
-
-.discount-badge {
-  background: #ffd600;
-  color: #7e4c00;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.95em;
-  margin-right: 8px;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.countdown-text {
-  color: #ff4500;
-  margin-right: 6px;
-}
-.countdown-timer {
-  font-family: 'Orbitron', monospace;
-  color: #ff4500;
-  letter-spacing: 2px;
-  font-size: 1.13em;
-  background: #fff6d6;
-  padding: 3px 9px;
-  border-radius: 7px;
-  min-width: 88px;
-  display: inline-block;
+  margin: 12px 0 0 0;
   text-align: center;
+  width: 100%;
+}
+
+.countdown-label {
+  color: red;
+  font-weight: 700;
+  font-size: 0.92rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+  display: block;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.timer-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 24px;
+}
+
+.timer-box {
+  background: #111;
+  color: #fff;
+  font-size: 0.98rem;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 2px 4.5px;
+  min-width: 24px;
+  box-shadow: 0 1px 3px #d8d8d822;
+  margin-bottom: 1px;
+  letter-spacing: 0.01em;
+}
+
+.timer-unit {
+  font-size: 0.67rem;
+  color: #888;
+  margin-top: 1px;
+  text-transform: capitalize;
+}
+
+.timer-colon {
+  font-size: 1.06rem;
+  color: #111;
+  margin: 0 0.5px 6px 0.5px;
+  font-weight: 800;
+  vertical-align: bottom;
+  padding-bottom: 1px;
 }
 
 .prod-price {

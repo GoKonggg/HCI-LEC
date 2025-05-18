@@ -1,29 +1,4 @@
-// ===== COUNTDOWN DISKON =====
-const discountEndTime = new Date();
-discountEndTime.setHours(discountEndTime.getHours() + 3); // Atur 3 jam dari sekarang
-
-function pad(n) { return n < 10 ? '0' + n : n; }
-function updateCountdown() {
-  const now = new Date();
-  const diff = Math.max(0, discountEndTime - now);
-  const hours = Math.floor(diff / 1000 / 60 / 60);
-  const mins = Math.floor((diff / 1000 / 60) % 60);
-  const secs = Math.floor((diff / 1000) % 60);
-  const timerElem = document.getElementById('countdown-timer');
-  if (timerElem) {
-    if (diff > 0) {
-      timerElem.textContent = `${pad(hours)}:${pad(mins)}:${pad(secs)}`;
-    } else {
-      timerElem.textContent = 'EXPIRED';
-      document.querySelector('.discount-countdown').style.opacity = 0.5;
-    }
-  }
-}
-setInterval(updateCountdown, 1000);
-updateCountdown();
-
-
-// ====== TOAST NOTIFIKASI (versi kamu, pusat layar) ======
+// ====== TOAST NOTIFIKASI (pusat layar) ======
 function toast(msg, opts = {}) {
   const {type = "success", link = null, linkText = "Your Wishlist"} = opts;
   const box = document.createElement("div");
@@ -204,3 +179,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+// ====== COUNTDOWN (per kotak, style sama discount page) ======
+function renderCountdown(deadline, containerId) {
+  const container = document.getElementById(containerId);
+
+  function update() {
+    const now = new Date();
+    const diff = deadline - now;
+
+    if (diff <= 0) {
+      container.innerHTML = `<span style="color:#e00;font-weight:bold">Expired</span>`;
+      clearInterval(timer);
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    container.innerHTML = `
+      <div class="timer-segment">
+        <span class="timer-box">${days}</span>
+        <span class="timer-unit">days</span>
+      </div>
+      <span class="timer-colon">:</span>
+      <div class="timer-segment">
+        <span class="timer-box">${hours}</span>
+        <span class="timer-unit">hrs</span>
+      </div>
+      <span class="timer-colon">:</span>
+      <div class="timer-segment">
+        <span class="timer-box">${mins}</span>
+        <span class="timer-unit">min</span>
+      </div>
+      <span class="timer-colon">:</span>
+      <div class="timer-segment">
+        <span class="timer-box">${secs}</span>
+        <span class="timer-unit">sec</span>
+      </div>
+    `;
+  }
+
+  update();
+  const timer = setInterval(update, 1000);
+}
+
+// Deadline discount: 1 Juni 2025, 23:59:59 (ganti jika beda produk)
+renderCountdown(new Date("2025-06-01T23:59:59"), "countdown-timer");
