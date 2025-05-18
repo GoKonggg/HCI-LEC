@@ -2,25 +2,25 @@
 const categories = [
   {
     name: "Jersey",
-    img: "asset/prod-2.png", // Ganti ke gambar kategori kamu
+    img: "ASSET/prod-2.png", // Ganti ke gambar kategori kamu
     count: 10,
     link: "collection-jersey.html"
   },
   {
     name: "Hoodie",
-    img:"asset/prod-2.png",
+    img:"ASSET/prod-2.png",
     count: 7,
     link: "collection-hoodie.html"
   },
   {
     name: "Accessories",
-    img: "asset/prod-2.png",
+    img: "ASSET/prod-2.png",
     count: 13,
     link: "collection-accessories.html"
   },
   {
     name: "Cap & Hat",
-    img: "asset/prod-2.png",
+    img: "ASSET/prod-2.png",
     count: 6,
     link: "collection-cap.html"
   }
