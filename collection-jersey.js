@@ -3,42 +3,42 @@
 // ========================
 const topSales = [
   {
-    img: "asset/prod-1.jpg",
+    img: "ASSET/prod-1.jpg",
     title: "RRQ X SLIME FANS BLACK 2025",
     price: "IDR 300,000.00",
     category: "Jersey",
-    link: "#"
+    link: "under-development.html"
   },
   {
-    img: "asset/prod-1.jpg",
+    img: "ASSET/prod-1.jpg",
     title: "RRQ X SLIME FANS WHITE 2025",
     price: "IDR 300,000.00",
     category: "Jersey",
-    link: "#"
+    link: "under-development.html"
   }
 ];
 
 const products = [
   {
-    img: "asset/prod-1.jpg",
+    img: "ASSET/prod-1.jpg",
     title: "RRQ X SLIME FANS BLACK 2025",
     price: 300000,
     category: "Jersey"
   },
   {
-    img: "asset/prod-1.jpg",
+    img: "ASSET/prod-1.jpg",
     title: "RRQ X SLIME FANS WHITE 2025",
     price: 300000,
     category: "Jersey"
   },
   {
-    img: "asset/prod-1.jpg",
+    img: "ASSET/prod-1.jpg",
     title: "RRQ PREMIUM HOODIE",
     price: 379000,
     category: "Hoodie"
   },
   {
-    img: "asset/prod-1.jpg",
+    img: "ASSET/prod-1.jpg",
     title: "RRQ SIGNATURE CAP",
     price: 129000,
     category: "Accessories"
