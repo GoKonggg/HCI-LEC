@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Discount Detail | RRQ-ish Store</title>
+  <link rel="stylesheet" href="discount-product-detail.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- ===== ANNOUNCEMENT BAR ===== -->
+  <div class="announcement">
+    <p>
+      <i class="fa-solid fa-truck"></i>
+      <a href="how-to-track-order.html" class="announcement-link">
+        HOW TO TRACK YOUR ORDERS FROM RRQ STORE! (ANNOUNCEMENT)
+      </a>
+    </p>
+    <div class="lang-select">
+      <span>ENGLISH</span><i class="fa-solid fa-caret-down"></i>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="./ASSET/logo.png" alt="RRQ Store" />
+      </a>
+    </div>
+    <form class="searchbar" autocomplete="off">
+      <input type="text" id="searchInput" placeholder="Search Products Here" />
+      <button type="submit">SEARCH</button>
+      <div class="recent-search" id="recentSearchBox" style="display:none">
+        <div class="recent-search-title">Recent Search</div>
+        <ul class="recent-search-list" id="recentSearchList"></ul>
+        <button class="recent-search-clear" id="recentSearchClear" type="button">Clear History</button>
+      </div>
+    </form>
+    <div class="header-icons">
+      <div class="account-wrap">
+        <button class="account-btn">
+          <i class="fa-regular fa-user"></i>
+          <span class="desktop-only"> Account</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="account-menu">
+          <a href="#" id="link-signin">Sign in</a>
+          <a href="#" id="link-register">Register</a>
+          <a href="#" id="link-wishlist">Wishlists (0)</a>
+        </div>
+      </div>
+      <a href="#">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="desktop-only">Cart&nbsp;: 0&nbsp;Item</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links">
+    <ul>
+      <li class="mega-menu-btn"><a href="#">Shop</a></li>
+      <li><a href="under-development.html">Special Price</a></li>
+      <li><a href="under-development.html">Jersey Slime 2025</a></li>
+      <li><a href="under-development.html">RRQ3S</a></li>
+      <li><a href="under-development.html">Apparel</a></li>
+      <li><a href="under-development.html">Accessories</a></li>
+      <li><a href="under-development.html">RRQ Labs</a></li>
+    </ul>
+  </nav>
+  <!-- ===== MEGA MENU SIDEBAR ===== -->
+  <div class="mega-menu-wrap" id="megaMenu">
+    <div class="mega-menu">
+      <ul class="mega-sidebar">
+        <li data-panel="jersey"><i class="fa-solid fa-shirt"></i> Jersey</li>
+        <li data-panel="hoodie"><i class="fa-solid fa-vest"></i> Hoodie</li>
+        <li data-panel="pants"><i class="fa-solid fa-person-walking"></i> Pants</li>
+        <li data-panel="footwear"><i class="fa-solid fa-shoe-prints"></i> Footwear</li>
+        <li data-panel="accessories"><i class="fa-solid fa-gem"></i> Accessories</li>
+        <li data-panel="collections"><i class="fa-solid fa-layer-group"></i> Collections</li>
+        <li data-panel="shopall"><i class="fa-solid fa-store"></i> Shop All</li>
+      </ul>
+      <div class="mega-panels">
+        <div class="mega-panel" data-panel="jersey">
+          <h3>Jersey RRQ</h3>
+          <a href="under-development.html">RRQ Jersey X Slime Black 2025</a>
+          <a href="under-development.html">RRQ Jersey X Slime White 2025</a>
+        </div>
+        <div class="mega-panel" data-panel="hoodie">
+          <h3>Hoodie RRQ</h3>
+          <a href="under-development.html">RRQ Premium Hoodie</a>
+          <a href="under-development.html">RRQ Windbreaker</a>
+        </div>
+        <div class="mega-panel" data-panel="pants">
+          <h3>Pants RRQ</h3>
+          <a href="under-development.html">RRQ Jogger Pants</a>
+          <a href="under-development.html">RRQ Sweatpants</a>
+        </div>
+        <div class="mega-panel" data-panel="footwear">
+          <h3>Footwear RRQ</h3>
+          <a href="under-development.html">RRQ Sneakers</a>
+          <a href="under-development.html">RRQ Slides</a>
+        </div>
+        <div class="mega-panel" data-panel="accessories">
+          <h3>Accessories RRQ</h3>
+          <a href="under-development.html">RRQ Cap</a>
+          <a href="under-development.html">RRQ Socks</a>
+          <a href="under-development.html">RRQ Keychain</a>
+        </div>
+        <div class="mega-panel" data-panel="collections">
+          <h3>Collections</h3>
+          <a href="under-development.html">RRQ Classic</a>
+          <a href="under-development.html">RRQ Limited Edition</a>
+        </div>
+        <div class="mega-panel" data-panel="shopall">
+          <h3>All Products</h3>
+          <a href="shop-all.html">Shop All RRQ Merch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="product-detail">
+      <div class="product-gallery">
+        <div class="discount-badge">-30%</div>
+        <img src="./ASSET/prod-1.jpg" id="mainImg" class="main-img" alt="RRQ Rosseau Tee" />
+      </div>
+      <div class="product-info">
+        <h1 class="prod-title">RRQ ROSSEAU T-SHIRT SHORT SLEEVE</h1>
+
+        <!-- DISCOUNT COUNTDOWN -->
+        <div class="discount-countdown">
+          <span class="countdown-text">Ends in</span>
+          <span id="countdown-timer" class="countdown-timer"></span>
+        </div>
+
+        <div class="prod-price">
+          <span class="current-price">IDR 129,000</span>
+          <span class="old-price">IDR <s>159,000</s></span>
+        </div>
+
+        <div class="prod-desc">
+          <p>Bahan katun premium, nyaman dipakai harian, sablon awet. Tersedia size S sampai XXL.</p>
+        </div>
+        <div class="prod-size">
+          <span>Choose Size:</span>
+          <select id="sizeSelect">
+            <option value="">Select Size</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+          <button class="size-guide-btn" id="openSizeGuide">
+            <i class="fa-solid fa-ruler"></i> Size Chart
+          </button>
+        </div>
+
+        <div class="prod-actions">
+          <button class="add-cart-btn">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+          <button class="add-wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIZE CHART MODAL -->
+    <div class="modal-bg" id="sizeGuideModal">
+      <div class="modal-content">
+        <button class="close-modal" id="closeSizeGuide">&times;</button>
+        <h3 class="size-guide-title">SIZE CHART</h3>
+        <img 
+          src="./ASSET/jersey_size_chart.png" 
+          alt="Size Chart Jersey RRQ"
+          class="size-guide-img"
+          style="max-width: 400px; width: 100%; margin: 0 auto; display: block;"
+        />
+        <p class="size-guide-desc" style="text-align:center; color:#444; margin-top:12px;">
+          All measurements are in centimeters (cm).<br>
+          For the best fit, compare with your favorite jersey.
+        </p>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <section class="reviews-section">
+      <h2>Customer Reviews</h2>
+      <div class="reviews-list" id="reviewsList">
+        <!-- Reviews loaded by JS -->
+      </div>
+      <form class="review-form" id="reviewForm">
+        <label for="reviewText">Add Your Review:</label>
+        <div class="review-stars-input" id="reviewStarsInput">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+        <textarea id="reviewText" rows="2" required placeholder="Your review..."></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      © 2024 RRQ Shop. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="discount-product-detail.js"></script>
+</body>
+</html>

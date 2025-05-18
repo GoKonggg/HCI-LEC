@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discounts | RRQ Store</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="discount.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+ <!-- ===== ANNOUNCEMENT BAR ===== -->
+<div class="announcement">
+  <p>
+    <i class="fa-solid fa-truck"></i>
+    <a href="how-to-track-order.html" class="announcement-link">
+      HOW TO TRACK YOUR ORDERS FROM RRQ STORE! (ANNOUNCEMENT)
+    </a>
+  </p>
+  <div class="lang-select">
+    <span>ENGLISH</span><i class="fa-solid fa-caret-down"></i>
+  </div>
+</div>
+
+
+  <!-- ===== HEADER (dengan dropdown Account) ===== -->
+<header class="header">
+  <div class="logo">
+  <a href="index.html">
+    <img src="./ASSET/logo.png" alt="RRQ Store" />
+  </a>
+</div>
+
+
+  <form class="searchbar" autocomplete="off">
+  <input type="text" id="searchInput" placeholder="Search Products Here" />
+  <button type="submit">SEARCH</button>
+  <div class="recent-search" id="recentSearchBox" style="display:none">
+    <div class="recent-search-title">Recent Search</div>
+    <ul class="recent-search-list" id="recentSearchList"></ul>
+    <button class="recent-search-clear" id="recentSearchClear" type="button">Clear History</button>
+  </div>
+</form>
+
+
+
+  <div class="header-icons">
+    <!-- dropdown account -->
+    <div class="account-wrap">
+      <button class="account-btn">
+        <i class="fa-regular fa-user"></i>
+        <span class="desktop-only"> Account</span>
+        <i class="fa-solid fa-caret-down caret"></i>
+      </button>
+
+      <div class="account-menu">
+        <a href="#" id="link-signin">Sign in</a>
+        <a href="#" id="link-register">Register</a>
+        <a href="#" id="link-wishlist">Wishlists (0)</a>
+      </div>
+    </div>
+
+    <!-- cart -->
+    <a href="#">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="desktop-only">Cart&nbsp;: 0&nbsp;Item</span>
+    </a>
+  </div>
+</header>
+
+
+  <!-- ===== NAV LINKS ===== -->
+  <nav class="nav-links">
+    <ul>
+       <li class="mega-menu-btn"><a href="#">Shop</a></li>
+      <li><a href="under-development.html">Special Price</a></li>
+      <li><a href="under-development.html">Jersey Slime 2025</a></li>
+      <li><a href="under-development.html">RRQ3S</a></li>
+      <li><a href="under-development.html">Apparel</a></li>
+      <li><a href="under-development.html">Accessories</a></li>
+      <li><a href="under-development.html">RRQ Labs</a></li>
+    </ul>
+  </nav>
+<!-- ===== MEGA MENU SIDEBAR (RRQ STYLE) ===== -->
+<div class="mega-menu-wrap" id="megaMenu">
+  <div class="mega-menu">
+    <!-- Sidebar kiri -->
+    <ul class="mega-sidebar">
+      <li data-panel="jersey"><i class="fa-solid fa-shirt"></i> Jersey</li>
+      <li data-panel="hoodie"><i class="fa-solid fa-vest"></i> Hoodie</li>
+      <li data-panel="pants"><i class="fa-solid fa-person-walking"></i> Pants</li>
+      <li data-panel="footwear"><i class="fa-solid fa-shoe-prints"></i> Footwear</li>
+      <li data-panel="accessories"><i class="fa-solid fa-gem"></i> Accessories</li>
+      <li data-panel="collections"><i class="fa-solid fa-layer-group"></i> Collections</li>
+      <li data-panel="shopall"><i class="fa-solid fa-store"></i> Shop All</li>
+    </ul>
+    <!-- Konten kanan -->
+    <div class="mega-panels">
+      <div class="mega-panel" data-panel="jersey">
+        <h3>Jersey RRQ</h3>
+        <a href="under-development.html">RRQ Jersey X Slime Black 2025</a>
+        <a href="under-development.html">RRQ Jersey X Slime White 2025</a>
+      </div>
+      <div class="mega-panel" data-panel="hoodie">
+        <h3>Hoodie RRQ</h3>
+        <a href="under-development.html">RRQ Premium Hoodie</a>
+        <a href="under-development.html">RRQ Windbreaker</a>
+      </div>
+      <div class="mega-panel" data-panel="pants">
+        <h3>Pants RRQ</h3>
+        <a href="under-development.html">RRQ Jogger Pants</a>
+        <a href="under-development.html">RRQ Sweatpants</a>
+      </div>
+      <div class="mega-panel" data-panel="footwear">
+        <h3>Footwear RRQ</h3>
+        <a href="under-development.html">RRQ Sneakers</a>
+        <a href="under-development.html">RRQ Slides</a>
+      </div>
+      <div class="mega-panel" data-panel="accessories">
+        <h3>Accessories RRQ</h3>
+        <a href="under-development.html">RRQ Cap</a>
+        <a href="under-development.html">RRQ Socks</a>
+        <a href="under-development.html">RRQ Keychain</a>
+      </div>
+      <div class="mega-panel" data-panel="collections">
+        <h3>Collections</h3>
+        <a href="under-development.html">RRQ Classic</a>
+        <a href="under-development.html">RRQ Limited Edition</a>
+      </div>
+      <div class="mega-panel" data-panel="shopall">
+        <h3>All Products</h3>
+        <a href="shop-all.html">Shop All RRQ Merch</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <nav class="breadcrumb">
+    <a href="index.html"><i class="fa fa-home"></i> Home</a> / <span>Discounts</span>
+  </nav>
+  <main class="discount-main">
+    <h1>Discounted Products</h1>
+    <div class="discount-grid" id="discountGrid">
+      <!-- Discounted products will be rendered by JS -->
+    </div>
+  </main>
+
+
+  <!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+
+  <!-- newsletter strip -->
+  <div class="footer-newsletter">
+    <div class="nw-left">
+      <i class="fa-solid fa-envelope-open-text"></i>
+      <div class="nw-text">
+        <h4>Newsletter</h4>
+        <p>Sign Up For Our Newsletter</p>
+      </div>
+    </div>
+
+    <form class="nw-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+    <small>You may unsubscribe at any moment. For that purpose, please find our contact info in the legal notice.</small>
+  </div>
+
+  <!-- footer columns -->
+  <div class="footer-columns">
+
+    <!-- address / contact -->
+    <div class="f-col f-contact">
+      <h4>ADDRESS</h4>
+      <p>Jl. Lapangan Bola No. 1 B, Kebon Jeruk, Jakarta Barat (Sebelah Ruko BRI) KOTA JAKARTA BARAT – KEBON JERUK DKI JAKARTA ID 11510</p>
+
+      <h4>CALL NOW</h4>
+      <p>+6282213775259</p>
+
+      <h4>EMAIL ID</h4>
+      <p>cs.store@teamrrq.com</p>
+    </div>
+
+    <!-- account links -->
+    <div class="f-col">
+      <h4>Your Account</h4>
+      <ul>
+        <li><a href="#">Personal info</a></li>
+        <li><a href="#">Orders</a></li>
+        <li><a href="#">Credit slips</a></li>
+        <li><a href="#">Addresses</a></li>
+        <li><a href="#">Vouchers</a></li>
+        <li><a href="#">My wishlists</a></li>
+      </ul>
+    </div>
+
+    <!-- info links -->
+    <div class="f-col">
+      <h4>Information</h4>
+      <ul>
+        <li><a href="#">Terms and Condition</a></li>
+        <li><a href="#">New products</a></li>
+        <li><a href="#">Best sellers</a></li>
+        <li><a href="#">Contact us</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /footer-columns -->
+
+  <!-- payment row & socials -->
+  <div class="footer-bottom">
+  <div class="socials">
+    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+  </div>
+  <div class="footer-payments">
+    <img src="./ASSET/payment.png" alt="Payments">
+  </div>
+  <div class="footer-empty"></div>
+</div>
+
+
+  <div class="copyright">
+    © 2024 RRQ Shop. All rights reserved.
+  </div>
+</footer>
+
+  <!-- halaman sudah selesai di atas -->
+
+<!-- === LOGIN / REGISTER MODAL === -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box">
+    <button class="auth-close">&times;</button>
+
+    <!-- tab switch -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-target="signin">Sign In</button>
+      <button class="auth-tab"        data-target="register">Register</button>
+    </div>
+
+    <!-- Sign-in form -->
+    <form class="auth-form active" id="formSignin">
+      <input type="email"    placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+
+    <!-- Register form -->
+    <form class="auth-form" id="formRegister">
+      <input type="text"     placeholder="First name" required>
+      <input type="text"     placeholder="Last name"  required>
+      <input type="email"    placeholder="Email"      required>
+      <input type="password" placeholder="Password"   required>
+      <button type="submit">CREATE ACCOUNT</button>
+    </form>
+  </div>
+</div>
+<script src="script.js"></script>
+  <script src="discount.js"></script>
+</body>
+</html>
