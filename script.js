@@ -473,4 +473,23 @@ document.addEventListener('DOMContentLoaded', function() {
   if (slides.length > 1) startTimer();
 });
 
+// Basic Carousel Logic
+const track = document.getElementById('discountCarouselTrack');
+const cards = Array.from(track.children);
+const cardWidth = cards[0].offsetWidth + 24; // +gap (adjust if gap changes in css)
+let position = 0;
+const visibleCards = 3; // JUMLAH CARD YANG KELIHATAN (ubah sesuai layout kamu)
+
+document.getElementById('discountPrev').onclick = () => {
+  position = Math.max(position - 1, 0);
+  track.style.transform = `translateX(-${position * cardWidth}px)`;
+};
+
+document.getElementById('discountNext').onclick = () => {
+  position = Math.min(position + 1, cards.length - visibleCards);
+  track.style.transform = `translateX(-${position * cardWidth}px)`;
+};
+
+
+
 
