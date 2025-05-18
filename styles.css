@@ -749,6 +749,38 @@
   overflow-wrap: anywhere; /* Paksa wrap kalau kepanjangan */
 }
 
+.pc-like {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #fff;
+  border:none;
+  padding: 7px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.16s;
+}
+.pc-like:hover i {
+  color: #ff7d00;
+}
+.pc-card {
+  position: relative; /* supaya .pc-like absolute tetap di atas card */
+}
+
+.pc-like i.fa-heart {
+  color: #ff7d00; /* outline kuning selalu */
+  transition: color 0.2s;
+}
+/* Tambahin efek fill kuning pas solid/active (wishlist) */
+.pc-like .fa-heart.yellow,
+.pc-like .fa-heart.fa-solid {
+  color: #ff7d00; /* fill kuning */
+}
+
+
+
+
+
 
 
 .see-all-bottom {
@@ -953,7 +985,7 @@
    FOOTER
 --------------------------------------------------- */
 .site-footer {
-  background: #151515;
+  background: #111;
   color: #eee;
   font-size: 0.85rem;
   line-height: 1.6;
@@ -1066,17 +1098,51 @@
 /* --- Bottom Row --- */
 .footer-bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 22px 8%;
   border-top: 1px solid #222;
+  background: #111; 
 }
 
-.footer-bottom img {
-  max-height: 32px;
-  object-fit: contain;
-  filter: grayscale(100%);
+.socials {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
+
+.footer-payments {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-payments img {
+  max-height: 36px;
+  object-fit: contain;
+}
+
+.footer-bottom > .footer-empty {
+  flex: 1;
+}
+
+/* Responsive: biar nggak berantakan di HP */
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    padding: 18px 4%;
+  }
+  .footer-payments {
+    justify-content: center;
+  }
+  .footer-bottom > .footer-empty {
+    display: none;
+  }
+}
+
 
 .socials a {
   font-size: 1.2rem;

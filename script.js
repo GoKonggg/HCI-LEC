@@ -103,48 +103,47 @@ function toast(msg, opts = {}) {
 }
 
 /* ================= WISHLIST & CART HANDLER ================ */
-$$(".pc-card").forEach(card=>{
-  const pid = card.dataset.id; // ← pastikan unik!
-  const like = card.querySelector(".pc-like"),
-        icon = like?.querySelector("i"),
-        addBtn = card.querySelector(".pc-add");
+document.querySelectorAll('.pc-like').forEach(like => {
+  like.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const card = like.closest('.pc-card');
+    const pid = card?.dataset.id;
+    if (!pid) return;
 
-  if (like && icon) {
-    function render(){
-      const liked = getWish().includes(pid);
-      like.classList.toggle("active", liked);
-      icon.className = liked ? "fa-solid fa-heart" : "fa-regular fa-heart";
+    let wl = JSON.parse(localStorage.getItem('wishlist') || '[]');
+    const icon = like.querySelector('i');
+    const liked = wl.includes(pid);
+    if (liked) {
+      wl = wl.filter(id => id !== pid);
+      icon.className = 'fa-regular fa-heart';
+      icon.classList.remove('yellow');
+      toast("Removed from wishlist", {type: "error" ,link: "wishlist.html"});
+    } else {
+      wl.push(pid);
+      icon.className = 'fa-solid fa-heart yellow';  // <-- kuning!
+      toast("Added to wishlist!", {link: "wishlist.html"});
     }
+    localStorage.setItem('wishlist', JSON.stringify(wl));
+    updateNavbar && updateNavbar();
+  });
 
-    like.onclick = e => {
-      e.stopPropagation();
-      let wl = getWish();
-      if (wl.includes(pid)) {
-        wl = wl.filter(id => id !== pid);
-        toast("Removed from wishlist", {link:"wishlist.html"});
-      } else {
-        wl.push(pid);
-        toast("The product was successfully added to your wishlist.", {
-          link: "wishlist.html"
-        });
-      }
-      setWish(wl);
-      render();
-      updateNavbar();
-    };
-    render();
-  }
-
-  if (addBtn) {
-    addBtn.onclick = ()=>{
-      let cart=getCart();
-      if(!cart.includes(pid)){
-        cart.push(pid); setCart(cart);
-        updateCartIndicator(); toast("Added to cart");
-      }else toast("Already in cart");
-    };
+  // Render icon saat load
+  const card = like.closest('.pc-card');
+  const pid = card?.dataset.id;
+  if (pid) {
+    let wl = JSON.parse(localStorage.getItem('wishlist') || '[]');
+    const icon = like.querySelector('i');
+    if (wl.includes(pid)) {
+      icon.className = 'fa-solid fa-heart yellow';
+    } else {
+      icon.className = 'fa-regular fa-heart';
+      icon.classList.remove('yellow');
+    }
   }
 });
+
+
 
 /* cart indicator */
 const cartLabel = $(".header-icons a:last-child span");
@@ -489,7 +488,4 @@ document.getElementById('discountNext').onclick = () => {
   position = Math.min(position + 1, cards.length - visibleCards);
   track.style.transform = `translateX(-${position * cardWidth}px)`;
 };
-
-
-
 

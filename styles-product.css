@@ -244,3 +244,14 @@ body {
 
 ::-webkit-scrollbar { width: 7px; background: #fafafa; }
 ::-webkit-scrollbar-thumb { background: #e8e8e8; border-radius: 10px; }
+
+.review-stars-input {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.review-stars-input i {
+  transition: color 0.2s;
+  margin-right: 2px;
+}
+
