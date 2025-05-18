@@ -237,6 +237,39 @@
       © 2024 – RRQ Shop. All rights reserved.
     </div>
   </footer>
+
+  
+<!-- === LOGIN / REGISTER MODAL === -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box">
+    <button class="auth-close">&times;</button>
+
+    <!-- tab switch -->
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-target="signin">Sign In</button>
+      <button class="auth-tab"        data-target="register">Register</button>
+    </div>
+
+    <!-- Sign-in form -->
+    <form class="auth-form active" id="formSignin">
+      <input type="email"    placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">LOGIN</button>
+    </form>
+
+    <!-- Register form -->
+    <form class="auth-form" id="formRegister">
+      <input type="text"     placeholder="First name" required>
+      <input type="text"     placeholder="Last name"  required>
+      <input type="email"    placeholder="Email"      required>
+      <input type="password" placeholder="Password"   required>
+      <button type="submit">CREATE ACCOUNT</button>
+    </form>
+  </div>
+</div>
+
+ 
+
    <script src="script.js" defer></script>
 
   <script src="dashboard.js" defer></script>
