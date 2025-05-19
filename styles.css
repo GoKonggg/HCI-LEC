@@ -642,10 +642,6 @@
   .chc-next { right: 10px; }
 }
 
-
-/* ---------------------------------------------------
-   PRODUCT CAROUSEL (refined with arrows & hover panel)
---------------------------------------------------- */
 .product-carousel {
   margin: 48px auto 0 auto;
   max-width: 1200px;
@@ -689,24 +685,32 @@
   cursor: pointer;
 }
 
-/* INI BAGIAN PALING PENTING!! */
 .pc-track-wrapper {
   width: 100%;
-  overflow-x: auto;
-  /* tambahin ini biar ngga wrap */
   white-space: nowrap;
-  /* biar semua .pc-track horizontal */
+  overflow-x: auto;
   display: block;
   position: relative;
 }
+
+.pc-track-wrapper {
+  overflow-x: auto;
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* Internet Explorer 10+ */
+}
+.pc-track-wrapper::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Opera */
+}
+
+
 .pc-track {
   display: flex;
   gap: 24px;
-  flex-wrap: nowrap;      /* PENTING! Jangan allow wrap! */
-  width: max-content;     /* biar panjangnya menyesuaikan isi */
+  flex-wrap: nowrap;      
+  width: max-content;    
 }
 .pc-track:not(.active) {
-  display: none !important;  /* biar yg tidak aktif ga muncul */
+  display: none !important;  
 }
 
 .pc-card {
@@ -722,7 +726,7 @@
   text-decoration: none;
   color: inherit;
   box-sizing: border-box;
-  margin: 0; /* no extra margin biar rapi di flex */
+  margin: 0; 
 }
 
 .pc-img-wrapper img {
@@ -742,11 +746,10 @@
   text-align: center;
   font-weight: 500;
   margin: 0;
-  /* Tambahkan baris berikut: */
-  white-space: normal;   /* Biar bisa wrapping */
-  word-break: break-word; /* Pecah kata kalau kepanjangan */
+  white-space: normal;  
+  word-break: break-word; 
   max-width: 100%;
-  overflow-wrap: anywhere; /* Paksa wrap kalau kepanjangan */
+  overflow-wrap: anywhere; 
 }
 
 .pc-like {
@@ -768,10 +771,9 @@
 }
 
 .pc-like i.fa-heart {
-  color: #ff7d00; /* outline kuning selalu */
+  color: #ff7d00; 
   transition: color 0.2s;
 }
-/* Tambahin efek fill kuning pas solid/active (wishlist) */
 .pc-like .fa-heart.yellow,
 .pc-like .fa-heart.fa-solid {
   color: #ff7d00; /* fill kuning */
@@ -897,8 +899,8 @@
 }
 
 .discount-img-wrapper {
-  width: 170px;
-  height: 170px;
+  width: 240px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -909,8 +911,110 @@
   height: 100%;
   object-fit: contain;
   border-radius: 6px;
-  background: #f5f5f5;
 }
+
+
+
+/* ----*/
+
+/* Wishlist Icon */
+.discount-card {
+  position: relative;
+  /* Batasi lebar maksimum (optional, biar aman di layout grid/flex) */
+  max-width: 230px;
+  overflow: hidden; /* Pastikan anaknya ga keluar */
+}
+
+/* Fix countdown supaya responsive */
+.countdown-timer {
+  display: flex;
+  flex-wrap: wrap;          /* WRAP! Kalau ga cukup, turun ke bawah */
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  max-width: 100%;          /* WAJIB: Tidak bisa lebih lebar dari card */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Countdown segment: Lebar min. lebih kecil, biar bisa rapat */
+.countdown-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #222;
+  color: #fff;
+  padding: 2px 3px 3px 3px;
+  border-radius: 7px;
+  min-width: 23px;         /* Perkecil dari sebelumnya */
+  font-size: 0.82rem;
+  box-sizing: border-box;
+}
+
+.countdown-num {
+  font-size: 0.95rem;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  line-height: 1.1;
+}
+
+.countdown-label {
+  color: red;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: 13px;
+  margin-bottom: 4px;
+  letter-spacing: 0.2px;
+  text-align: center;
+  white-space: nowrap;     /* Ini BIKIN selalu 1 baris */
+  width: 100%;             /* Full width card */
+  display: block;
+}
+
+
+.countdown-text {
+  font-size: 0.58rem;
+  color: #bbb;
+  margin-top: -1px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.countdown-separator {
+  color: #222;
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0 1px;
+}
+
+
+/* PAKAI LANGSUNG STYLE .pc-like DARI CSS KAMU */
+.discount-card .pc-like {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #fff;
+  border:none;
+  padding: 7px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.16s;
+}
+.discount-card .pc-like:hover i {
+  color: #ff7d00;
+}
+.discount-card .pc-like i.fa-heart {
+  color: #ff7d00; 
+  transition: color 0.2s;
+}
+.discount-card .pc-like .fa-heart.yellow,
+.discount-card .pc-like .fa-heart.fa-solid {
+  color: #ff7d00; /* warna saat aktif */
+}
+
+
 
 .prod-title {
   color: #1b1b1b;

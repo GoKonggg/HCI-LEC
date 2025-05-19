@@ -103,33 +103,9 @@ function toast(msg, opts = {}) {
 }
 
 /* ================= WISHLIST & CART HANDLER ================ */
+// 1. Render icon heart sesuai status wishlist saat load
 document.querySelectorAll('.pc-like').forEach(like => {
-  like.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const card = like.closest('.pc-card');
-    const pid = card?.dataset.id;
-    if (!pid) return;
-
-    let wl = JSON.parse(localStorage.getItem('wishlist') || '[]');
-    const icon = like.querySelector('i');
-    const liked = wl.includes(pid);
-    if (liked) {
-      wl = wl.filter(id => id !== pid);
-      icon.className = 'fa-regular fa-heart';
-      icon.classList.remove('yellow');
-      toast("Removed from wishlist", {type: "error" ,link: "wishlist.html"});
-    } else {
-      wl.push(pid);
-      icon.className = 'fa-solid fa-heart yellow';  // <-- kuning!
-      toast("Added to wishlist!", {link: "wishlist.html"});
-    }
-    localStorage.setItem('wishlist', JSON.stringify(wl));
-    updateNavbar && updateNavbar();
-  });
-
-  // Render icon saat load
-  const card = like.closest('.pc-card');
+  const card = like.closest('.discount-card, .pc-card');
   const pid = card?.dataset.id;
   if (pid) {
     let wl = JSON.parse(localStorage.getItem('wishlist') || '[]');
@@ -142,6 +118,37 @@ document.querySelectorAll('.pc-like').forEach(like => {
     }
   }
 });
+
+// 2. Event delegation untuk handle klik heart
+document.body.addEventListener('click', function(e) {
+  const btn = e.target.closest('.pc-like');
+  if (!btn) return;
+
+  e.preventDefault();
+  e.stopPropagation();
+  const card = btn.closest('.discount-card, .pc-card');
+  const pid = card?.dataset.id;
+  if (!pid) return;
+  let wl = JSON.parse(localStorage.getItem('wishlist') || '[]');
+  const icon = btn.querySelector('i');
+  const liked = wl.includes(pid);
+  if (liked) {
+    wl = wl.filter(id => id !== pid);
+    icon.className = 'fa-regular fa-heart';
+    icon.classList.remove('yellow');
+    toast("Removed from wishlist", {type: "error", link: "wishlist.html"});
+  } else {
+    wl.push(pid);
+    icon.className = 'fa-solid fa-heart yellow';
+    toast("Added to wishlist!", {link: "wishlist.html"});
+  }
+  localStorage.setItem('wishlist', JSON.stringify(wl));
+  updateNavbar && updateNavbar();
+});
+
+
+  
+
 
 
 
@@ -472,12 +479,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (slides.length > 1) startTimer();
 });
 
-// Basic Carousel Logic
 const track = document.getElementById('discountCarouselTrack');
 const cards = Array.from(track.children);
-const cardWidth = cards[0].offsetWidth + 24; // +gap (adjust if gap changes in css)
+const cardWidth = cards[0].offsetWidth + 24; // 24 = gap (pastikan sama dgn CSS)
+const visibleCards = 6;
 let position = 0;
-const visibleCards = 3; // JUMLAH CARD YANG KELIHATAN (ubah sesuai layout kamu)
+
+// Hitung posisi maksimum supaya gak jebol
+const maxPosition = Math.max(0, cards.length - visibleCards);
 
 document.getElementById('discountPrev').onclick = () => {
   position = Math.max(position - 1, 0);
@@ -485,7 +494,44 @@ document.getElementById('discountPrev').onclick = () => {
 };
 
 document.getElementById('discountNext').onclick = () => {
-  position = Math.min(position + 1, cards.length - visibleCards);
+  position = Math.min(position + 1, maxPosition);
   track.style.transform = `translateX(-${position * cardWidth}px)`;
 };
+
+
+function startCountdown(targetDate, displayId) {
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+      document.getElementById(displayId).innerHTML = "Expired";
+      clearInterval(timer);
+      return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    document.getElementById(displayId).innerHTML =
+      `<div class="countdown-segment"><span class="countdown-num">${days}</span><span class="countdown-text">Days</span></div>
+       <span class="countdown-separator">:</span>
+       <div class="countdown-segment"><span class="countdown-num">${hours.toString().padStart(2, '0')}</span><span class="countdown-text">Hours</span></div>
+       <span class="countdown-separator">:</span>
+       <div class="countdown-segment"><span class="countdown-num">${mins.toString().padStart(2, '0')}</span><span class="countdown-text">Minutes</span></div>
+       <span class="countdown-separator">:</span>
+       <div class="countdown-segment"><span class="countdown-num">${secs.toString().padStart(2, '0')}</span><span class="countdown-text">Seconds</span></div>`;
+  }
+  updateCountdown();
+  const timer = setInterval(updateCountdown, 1000);
+}
+
+// Contoh panggil (tanggal promo akhir 1 Juni 2025, jam 23:59:59)
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-1");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-2");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-3");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-4");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-5");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-6");
+startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-7");
 
