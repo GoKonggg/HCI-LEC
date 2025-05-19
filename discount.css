@@ -11,25 +11,46 @@
   margin-top: 32px;
   justify-items: center;
 }
+
 .discount-card {
   border-radius: 18px;
   box-shadow: 0 2px 12px #eaeaea;
   background: #fff;
   overflow: hidden;
-  padding: 18px;
+  padding: 18px 18px 18px 18px;
   position: relative;
   min-width: 250px;
   max-width: 320px;
   width: 100%;
   text-align: left;
   margin: 0 auto;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .discount-card:hover {
   box-shadow: 0 6px 24px #d6d6d6;
 }
 
+/* Wishlist heart icon */
+.discount-card .wishlist-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.discount-card .wishlist-btn:focus {
+  outline: none;
+}
+
+/* Discount badge (top left) */
 .discount-badge {
   position: absolute;
   top: 16px;
@@ -44,11 +65,23 @@
   text-align: center;
   letter-spacing: 1px;
   z-index: 2;
+  box-shadow: 0 2px 6px #e7e7e7a0;
 }
-.discount-price {
+
+/* Hilangkan underline pada link judul produk */
+.discount-card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.discount-card a:hover .prod-title,
+.discount-card a:focus .prod-title {
   color: #e61e1e;
-  font-weight: bold;
-  font-size: 1.2rem;
+  text-decoration: underline;
 }
 
 .discount-img {
@@ -57,11 +90,30 @@
   margin-bottom: 12px;
   margin-top: 18px;
   object-fit: cover;
-  min-height: 140px; 
+  min-height: 140px;
   background: #f5f5f5;
   display: block;
+  box-shadow: 0 2px 8px #f4f4f4;
 }
 
+/* Judul produk */
+.prod-title, .discount-card h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin: 8px 0 10px 0;
+  color: #222;
+  text-align: center;
+  line-height: 1.25;
+  word-break: break-word;
+  transition: color 0.18s;
+}
+
+/* Harga diskon dan harga coret */
+.discount-price {
+  color: #e61e1e;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 
 .discount-old {
   color: #888;
@@ -69,6 +121,7 @@
   margin-left: 8px;
   font-size: 1rem;
 }
+
 .discount-countdown {
   margin: 12px 0 0 0;
   text-align: center;
@@ -76,10 +129,10 @@
 }
 
 .countdown-label {
-  color: red;
+  color: #e61e1e;
   font-weight: 700;
   font-size: 0.92rem;
-  margin-bottom: 10px;
+  margin-bottom: 7px;
   letter-spacing: 0.04em;
   display: block;
 }
@@ -88,7 +141,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 4px;           /* lebih rapat */
+  gap: 4px;
   margin-bottom: 0;
   width: 100%;
 }
@@ -103,7 +156,7 @@
 .timer-box {
   background: #111;
   color: #fff;
-  font-size: 0.98rem;    /* lebih kecil */
+  font-size: 0.98rem;
   font-family: 'Orbitron', monospace;
   font-weight: 700;
   border-radius: 6px;
@@ -130,20 +183,40 @@
   padding-bottom: 1px;
 }
 
+/* Responsive Fix for Mobile */
+@media (max-width: 700px) {
+  .discount-main {
+    padding: 20px 6px;
+  }
+  .discount-card {
+    min-width: 180px;
+    max-width: 100%;
+    padding: 10px;
+  }
+  .discount-grid {
+    gap: 14px;
+  }
+  .prod-title, .discount-card h3 {
+    font-size: 1rem;
+  }
+  .discount-img {
+    min-height: 90px;
+  }
+}
 
-
-
+/* Breadcrumb styling (opsional, kalau dipakai di page yang sama) */
 .breadcrumb {
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-left: 250px;        
+  margin-left: 0;        
   margin-top: 16px;
   font-size: 1.05rem;
+  padding-left: 8px;
 }
 
 .breadcrumb a {
-  color: #ff7d00;            
+  color: #ff7d00;
   font-weight: 600;
   text-decoration: underline;
   display: flex;
@@ -153,13 +226,13 @@
 }
 
 .breadcrumb a:hover {
-  color: #ff7d00;            /* Kuning lebih gelap saat hover */
+  color: #e61e1e;
 }
 
 .breadcrumb .fa-home {
   font-size: 1.1rem;
   margin-right: 4px;
-  color: #ff7d00;            /* Icon Home Kuning */
+  color: #ff7d00;
 }
 
 .breadcrumb span {
@@ -167,3 +240,69 @@
   margin-left: 2px;
   font-weight: 500;
 }
+
+.toast-box {
+  position: fixed;
+  top: 32px;
+  right: 36px;
+  left: unset;
+  transform: none;
+  z-index: 9999;
+  min-width: 280px;
+  max-width: 92vw;
+  padding: 13px 28px 13px 18px;
+  background: #24b14d;
+  color: #fff;
+  
+  box-shadow: 0 3px 16px #0001, 0 1px 4px #0002;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 1.03rem;
+  opacity: 0;
+  pointer-events: none;
+  animation: toastIn 0.45s cubic-bezier(.5,1.6,.6,1.02) forwards, toastOut 0.5s 3s forwards;
+  font-weight: 500;
+}
+
+.toast-box .icon {
+  font-size: 1.35em;
+  color: #fff;
+  flex-shrink: 0;
+  margin-right: 3px;
+  margin-left: 2px;
+}
+.toast-box .msg {
+  margin-right: 2px;
+}
+.toast-box .msg a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.toast-box.hide {
+  animation: toastOut 0.5s forwards !important;
+}
+
+.toast-box.error {
+  background: #d9534f !important;
+  color: #fff;
+}
+.toast-box.error .icon { color: #fff; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(-18px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes toastOut {
+  from { opacity: 1;}
+  to   { opacity: 0; }
+}
+
+
+
+.fa-heart.yellow { color: #ff7d00 !important; }
+
+

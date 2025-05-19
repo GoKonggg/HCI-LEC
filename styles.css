@@ -925,19 +925,74 @@
   overflow: hidden; /* Pastikan anaknya ga keluar */
 }
 
-/* Fix countdown supaya responsive */
 .countdown-timer {
   display: flex;
-  flex-wrap: wrap;          /* WRAP! Kalau ga cukup, turun ke bawah */
   justify-content: center;
   align-items: flex-end;
-  gap: 2px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  max-width: 100%;          /* WAJIB: Tidak bisa lebih lebar dari card */
-  overflow: hidden;
-  box-sizing: border-box;
+  gap: 3px;                    /* <== LEBAR GAP antar box (bisa ubah ke 4px kalau mau agak renggang) */
+  margin-bottom: 0;
+  width: 100%;
 }
+
+.timer-segment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 18px;             /* Lebar box, lebih kecil */
+}
+
+.timer-box {
+  background: #111;
+  color: #fff;
+  font-size: 0.89rem;          /* Ukuran angka lebih kecil */
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 2.5px 6px 2px 6px;  /* Atur padding supaya tinggi box imut */
+  min-width: 21px;
+  text-align: center;
+  box-shadow: 0 1px 3px #d8d8d822;
+  margin-bottom: 0px;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+}
+
+.timer-unit {
+  font-size: 0.61rem;         /* Ukuran label lebih kecil */
+  color: #bbb;
+  margin-top: 1.5px;
+  text-transform: capitalize;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.timer-colon {
+  font-size: 1.05rem;
+  color: #111;
+  margin: 0 1px 6px 1px;      /* Jarak kiri-kanan & bawah titik dua */
+  font-weight: 800;
+  vertical-align: bottom;
+  padding-bottom: 1px;
+  font-family: 'Orbitron', monospace;
+}
+
+
+@media (max-width: 600px) {
+  .timer-segment {
+    min-width: 24px;
+  }
+  .timer-box {
+    font-size: 1.03rem;
+    min-width: 24px;
+    padding: 2px 6px;
+  }
+  .timer-colon {
+    font-size: 1.05rem;
+    margin: 0 1px 7px 1px;
+  }
+}
+
 
 /* Countdown segment: Lebar min. lebih kecil, biar bisa rapat */
 .countdown-segment {

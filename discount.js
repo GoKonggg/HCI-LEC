@@ -120,17 +120,23 @@ const grid = document.getElementById('discountGrid');
 
 
 grid.innerHTML = discountedProducts.map((p, idx) => `
-  <a href="${p.href || 'discount-product-detail.html'}" class="discount-card">
-    <div class="discount-badge">-${p.discount}%</div>
-    <img src="${p.image}" alt="${p.name}" class="discount-img">
-    <h3>${p.name}</h3>
-    <div>
-      <span class="discount-price">Rp ${p.price.toLocaleString()}</span>
-      <span class="discount-old">Rp ${p.oldPrice.toLocaleString()}</span>
-    </div>
-    <div class="discount-countdown" id="countdown-${idx}"></div>
-  </a>
+  <div class="discount-card" data-idx="${idx}">
+    <button class="wishlist-btn" data-idx="${idx}" title="Add to wishlist">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+    <a href="${p.href || 'discount-product-detail.html'}">
+      <div class="discount-badge">-${p.discount}%</div>
+      <img src="${p.image}" alt="${p.name}" class="discount-img">
+      <h3>${p.name}</h3>
+      <div>
+        <span class="discount-price">Rp ${p.price.toLocaleString()}</span>
+        <span class="discount-old">Rp ${p.oldPrice.toLocaleString()}</span>
+      </div>
+      <div class="discount-countdown" id="countdown-${idx}"></div>
+    </a>
+  </div>
 `).join('');
+
 
 
 // Setelah innerHTML produk, tambahkan untuk tiap card:
@@ -184,4 +190,48 @@ discountedProducts.forEach((p, idx) => {
   updateCountdown();
   setInterval(updateCountdown, 1000);
 });
+
+// Local Storage for wishlist (pakai idx string supaya konsisten)
+const wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+
+// Fungsi update icon heart
+function updateWishlistIcons() {
+  document.querySelectorAll('.wishlist-btn').forEach(btn => {
+    const idx = btn.getAttribute('data-idx');
+    const isWishlisted = wishlist.includes(idx);
+    btn.innerHTML = isWishlisted
+      ? '<i class="fa-solid fa-heart yellow"></i>'
+      : '<i class="fa-regular fa-heart"></i>';
+  });
+}
+
+// Render icon pertama kali
+updateWishlistIcons();
+
+// Toggle wishlist saat heart di-click
+document.querySelectorAll('.wishlist-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    const idx = btn.getAttribute('data-idx');
+    const i = wishlist.indexOf(idx);
+    if (i === -1) {
+  wishlist.push(idx);
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  btn.innerHTML = '<i class="fa-solid fa-heart yellow"></i>';  // <-- tambah yellow!
+  toast("Added to wishlist!", { link: "wishlist.html" });
+} else {
+  wishlist.splice(i, 1);
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  btn.innerHTML = '<i class="fa-regular fa-heart"></i>';
+  toast("Removed from wishlist", { type: "error", link: "wishlist.html" });
+}
+
+    // Optional: update icon di navbar
+    // updateNavbar && updateNavbar();
+  });
+});
+
+
+
 

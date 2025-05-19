@@ -504,7 +504,7 @@ function startCountdown(targetDate, displayId) {
     const now = new Date();
     const diff = targetDate - now;
     if (diff <= 0) {
-      document.getElementById(displayId).innerHTML = "Expired";
+      document.getElementById(displayId).innerHTML = "<b style='color:red'>Expired</b>";
       clearInterval(timer);
       return;
     }
@@ -512,18 +512,32 @@ function startCountdown(targetDate, displayId) {
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const mins = Math.floor((diff / (1000 * 60)) % 60);
     const secs = Math.floor((diff / 1000) % 60);
+
     document.getElementById(displayId).innerHTML =
-      `<div class="countdown-segment"><span class="countdown-num">${days}</span><span class="countdown-text">Days</span></div>
-       <span class="countdown-separator">:</span>
-       <div class="countdown-segment"><span class="countdown-num">${hours.toString().padStart(2, '0')}</span><span class="countdown-text">Hours</span></div>
-       <span class="countdown-separator">:</span>
-       <div class="countdown-segment"><span class="countdown-num">${mins.toString().padStart(2, '0')}</span><span class="countdown-text">Minutes</span></div>
-       <span class="countdown-separator">:</span>
-       <div class="countdown-segment"><span class="countdown-num">${secs.toString().padStart(2, '0')}</span><span class="countdown-text">Seconds</span></div>`;
+      `<div class="timer-segment">
+        <span class="timer-box">${days.toString().padStart(2, '0')}</span>
+        <span class="timer-unit">Days</span>
+      </div>
+      <span class="timer-colon">:</span>
+      <div class="timer-segment">
+        <span class="timer-box">${hours.toString().padStart(2, '0')}</span>
+        <span class="timer-unit">Hours</span>
+      </div>
+      <span class="timer-colon">:</span>
+      <div class="timer-segment">
+        <span class="timer-box">${mins.toString().padStart(2, '0')}</span>
+        <span class="timer-unit">Minutes</span>
+      </div>
+      <span class="timer-colon">:</span>
+      <div class="timer-segment">
+        <span class="timer-box">${secs.toString().padStart(2, '0')}</span>
+        <span class="timer-unit">Seconds</span>
+      </div>`;
   }
   updateCountdown();
   const timer = setInterval(updateCountdown, 1000);
 }
+
 
 // Contoh panggil (tanggal promo akhir 1 Juni 2025, jam 23:59:59)
 startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey");
@@ -534,4 +548,17 @@ startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-4");
 startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-5");
 startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-6");
 startCountdown(new Date("2025-06-01T23:59:59"), "countdown-jersey-7");
+
+document.querySelectorAll('.discount-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    // Cegah redirect kalau klik tombol hati/wishlist
+    if (e.target.closest('.pc-like')) return;
+    
+    // Ambil id produk
+    const pid = card.dataset.id; // data-id dari card
+    // Redirect ke halaman detail produk diskon
+    window.location.href = `discount-product-detail.html?id=${encodeURIComponent(pid)}`;
+  });
+});
+
 
